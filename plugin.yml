@@ -1,0 +1,60 @@
+name: SetTheSpawn
+main: hu.montlikadani.SetTheSpawn.SetTheSpawn
+version: 1.0
+author: montlikadani
+description: Set the spawn at the location.
+# DO NOT EDIT ANYTHING ABOVE THIS LINE!
+
+commands:
+  setthespawn:
+    description: The main command for SetTheSpawn.
+    usage: <command>
+    aliases: [sts]
+  setspawn:
+    description: Set the spawn command.
+    usage: <command>
+  deletespawn:
+    description: Delete the spawn command.
+    usage: <command>
+    aliases: [delspawn]
+  spawn:
+    description: Teleport to the spawn.
+    usage: <command>
+
+permissions:
+  setthespawn.cmd.nocooldown:
+    description: Command wait time permission.
+    default: false
+  setthespawn.help:
+    description: Help commands for SetTheSpawn.
+    default: false
+  setthespawn.reload:
+    description: Reload the config files.
+    default: op
+  setthespawn.plugindisable:
+    description: Disable the plugin permission.
+    default: op
+  setthespawn.cmd.tabcomplete:
+    description: You can use [TAB] in commands.
+    default: false
+  setthespawn.setspawn:
+    description: You can use /setspawn command.
+    default: false
+  setthespawn.spawn.use:
+    description: You can use /spawn command.
+    default: true
+  setthespawn.delspawn:
+    description: You can use /deletespawn command.
+    default: false
+  setthespawn.bypass.cooldown:
+    description: Bypass teleport cooldown permission.
+    default: false
+  setthespawn.spawn.teleport.all:
+    description: Teleport all players to spawn permission.
+    default: false
+  setthespawn.spawn.teleport.other:
+    description: Teleport other player to spawn permission.
+    default: false
+  setthespawn.spawn.setup:
+    description: Spawn settings gui.
+    default: false

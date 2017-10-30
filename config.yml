@@ -1,0 +1,182 @@
+#=================================OOO====================================#
+#                      SetTheSpawn Configuration File                    #
+#=================================OOO====================================#
+# config.yml file. Plugin version: 1.0                                   #
+# Author, created by: montlikadani                                       #
+#=================================OOO====================================#
+# [Default configurations]                                               #
+# https://dev.bukkit.org/projects/setthespawn/pages/configyml            #
+#                                                                        #
+# [Placeholders]                                                         #
+# https://dev.bukkit.org/projects/setthespawn/pages/placeholders         #
+#                                                                        #
+# [Tips]                                                                 #
+# - Use color coding '&' character, on this page:                        #
+# http://minecraft.gamepedia.com/Formatting_codes                        #
+# - In case of an error, write here:                                     #
+# https://github.com/montlikadani/SetTheSpawn/issues                     #
+#=================================OOO====================================#
+
+# If these number mark (#) are in the way, you can safely remove it.
+
+#=========================================#
+#                Settings                 #
+#=========================================#
+# How many seconds do you have to wait for a player to be teleported?
+# If 0 you do not have to wait.
+teleport-delay: 3 # In seconds!
+
+# Cancel teleport on move.
+cancel-teleport-on-move:
+  enable: true
+  enable-message: true
+  teleport-cancelled: '&cCountdown cancelled, you can''t move!'
+  enable-permission: false
+  permission: 'setthespawn.bypass.movement'
+
+# When a player is being teleported, will he play an effect?
+teleport-effect:
+  enable: true
+  # All effects:
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
+  effect: ENDER_SIGNAL
+  int: 10
+
+# Teleport sound playback.
+teleport-sound:
+  enable: false
+  # All sounds:
+  # 1.7.x: https://jd.bukkit.org/org/bukkit/Sound.html
+  # 1.8.x: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
+  # 1.9.x, 1.10.x, 1.11.x, 1.12.x: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  sound: ENDERMAN_TELEPORT
+  volume: 10
+  pitch: 1
+
+# When does the player void, will he teleport to the spawn?
+void-on-spawn:
+  enable: false
+  # If it is true, it does not hurt.
+  # If it is false, it hurts.
+  fall-distance: true
+  # When a player void, plays an effect?
+  teleport-effect:
+    enable: true
+    # All effects:
+    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
+    effect: ENDER_SIGNAL
+    int: 15
+  message-enable: false
+  message: '&a&lTeleportation to spawn...'
+
+# Teleport on command.
+teleport-on-command:
+  enable: false
+  # Player command.
+  # Use %player%, %player-displayname%, %newline%, %prefix%, %world%, %player-gamemode%, %max-players%, %online-players%, %player-health%, %player-max-health% placeholder.
+  player-command:
+    enable: false
+    commands:
+    - 'money'
+    - 'kit'
+  # Console command.
+  console-command:
+    enable: false
+    commands:
+    - 'eco take %player% 50'
+    - 'money'
+
+# Teleport to spawn if:
+spawn-teleport:
+  # If the player joins the server, will it teleport to the spawn?
+  player-join: false
+  # If the player first joins the server, will it teleport to the spawn?
+  player-first-join: false
+
+# How many rows should the GUI have?
+gui-rows: 1
+ 
+# What should the name of the GUI be?
+gui-name: '&5Spawn settings'
+
+# Enable this message when the player has opened the gui?
+enable-message: true
+gui-open-message: '&aYou opened the spawn settings.'
+ 
+# All GUI items are here. Add slots in the same format, and it will add items to the GUI
+items:
+  slot-0:
+    item-id: 345
+    name: '&3Setspawn'
+    lore:
+      line-0: '&7------------'
+      line-1: '&aSet spawn command.'
+      line-2: '&7------------'
+    command: setspawn
+  slot-1:
+    item-id: 368
+    name: '&6Spawn'
+    lore:
+      line-0: '&7------------'
+      line-1: '&aTeleport to the spawn.'
+      line-2: '&7------------'
+    command: spawn
+  slot-2:
+    item-id: 352
+    name: '&4Delete spawn'
+    lore:
+      line-0: '&7------------'
+      line-1: '&5Delete spawn.'
+      line-2: '&7------------'
+    command: delspawn
+
+#=========================================#
+#             Plugin Settings             #
+#=========================================#
+# The SetTheSpawn plugin is disabled (false) or enabled (true).
+# As this function is set to false, the plugin will shut itself down and no commands (which the plugin will detect) will be detected.
+# To reload, write to true and refresh the server /reload.
+enabled: true
+
+# bStats Metrics.
+metrics: true
+
+# Check for updates.
+check-update: true
+
+# Auto plugin refresh.
+auto-refresh-enable: false
+# In minutes!
+auto-refresh-time: 10
+
+# Log in to the console with plugin messages.
+logconsole: true
+
+# Logging to file messages.
+log-to-file: true
+
+# Plugin enable/disable messages in console.
+# Use %prefix%, %newline% placeholder.
+plugin-enable-message: true
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.0&a!'
+plugin-disable-message: true
+plugin-disable: '%prefix%&c The plugin successfully disabled!'
+
+# The default is allowed to see the plugin information.
+main-info-stscommand-on-default: false
+
+# Command waiting period.
+# If you set it to 0 you will not have to wait.
+# Measured in seconds. 1 seconds - 20 ticks.
+# (This feature is known that there is no excessive lagg.)
+# Use %seconds% (This placeholder is valid only here), %newline%, %prefix% placeholder.
+command-wait-time: 3
+command-wait: '%prefix%&c Please wait&7 %seconds%&c seconds to use again!'
+
+# Unknown-command - If more than one word/letter you write to it.
+# Example: /sts reload something...
+# Use %newline%, %command%, %prefix% placeholder.
+# %command% - When you type the command (example: /setthespawn), it writes the command to it.
+# This feature is NOT enter into the unknown command Minecraft, it's just your own.
+unknown-command-enable: true
+unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'

@@ -1,0 +1,48 @@
+#=========================================#
+#                Messages                 #
+#=========================================#
+# Default language: 'EN' - English.
+# That is the apostrophe ('') inside them you can feel free to edit.
+prefix: '&6&l[&9&lSet&2&lThe&4&lSpawn&6&l]&7&l »'
+
+# Use %prefix%, %newline%, %perm% placeholder.
+no-permission: '&cYou don''t have permission for that!&7 (%perm%)'
+reload-config: '%prefix%&a The plugin successfully reloaded!'
+
+# Use %subcmd% placeholder.
+unknown-sub-command: '%prefix%&c Unknown sub-command&7 %subcmd%&c.'
+
+# Use %command% placeholder.
+spawn-no-console: '%prefix%&c Use: "&7/%command% <player;all>&c".'
+no-console: '%prefix%&c This command "&7/%command%&c" can only be used by players.'
+
+# Use %file%, %world%, %x%, %y%, %z%, %yaw%, %pitch% placeholder.
+spawn-successfully-set: '%prefix%&a The spawn successfully set!%newline%&5Location:%newline%&8-&e File:&a %file%%newline%&8-&e World:&a %world%%newline%&8-&e X:&a %x%%newline%&8-&e Y:&a %y%%newline%&8-&e Z:&a %z%%newline%&8-&e Yaw:&a %yaw%%newline%&8-&e Pitch:&a %pitch%'
+spawn-deleted: '%prefix%&c The spawn successfully deleted!'
+spawn-already-deleted: '%prefix%&c The spawn already deleted!'
+no-spawn: '&cThe spawn has not yet been set!'
+teleport-all-players: '&2Everyone was teleported to the spawn.'
+
+# Use %player% placeholder.
+spawn-teleport-success: '&6Teleporting...'
+player-not-online: '&cThis player&e %player%&c is not online.'
+teleport-other-spawn: '&2You teleported&5 %player%&2 player to spawn!'
+error-spawn-not-set: '%prefix%&4 ERROR:&c The spawn location has NOT BEEN set! Type "&7/setspawn&c" to set spawn position.'
+
+# Use %seconds% placeholder.
+teleport-wait-msg: '&6Teleporting in&c %seconds%&6 seconds ...&4 Don''t move!'
+
+# This feature lists all the chat panel help.
+chat-messages:
+- '&c&m---------&b> &e[&9Set&2The&4Spawn&2 Help&e]&b <&c&m----------'
+- '&8/&a%command% [TAB]&4 -&6 Main plugin info.'
+- '&8/&a%command% disable&4 -&6 Disable the plugin.'
+- '&8/&a%command% help&4 -&6 Help commands.'
+- '&8/&a%command% reload (or rl)&4 -&6 Reload the config files.'
+- '&8/&a%command% setup&4 -&6 Open the gui setup.'
+- '&8/&asetspawn&4 -&6 Set the spawn.'
+- '&8/&adeletespawn (or delspawn)&4 -&6 Delete the spawn.'
+- '&8/&aspawn [player;all]&4 -&6 Teleport to the spawn.'
+- '&c&m-------------------------------------------'
+#You can add more paragraphs.
+warning-disable-command: '%prefix%&4&l Warning!&c If you disable the plugin, you can only enable it when you refresh the server and enable "enabled: true" in the config.yml file.'
