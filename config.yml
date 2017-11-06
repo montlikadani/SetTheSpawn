@@ -1,14 +1,14 @@
 #=================================OOO====================================#
 #                      SetTheSpawn Configuration File                    #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.0                                   #
+# config.yml file. Plugin version: 1.1                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
-# https://dev.bukkit.org/projects/setthespawn/pages/configyml            #
+# https://github.com/montlikadani/SetTheSpawn/blob/master/config.yml     #
 #                                                                        #
 # [Placeholders]                                                         #
-# https://dev.bukkit.org/projects/setthespawn/pages/placeholders         #
+# https://github.com/montlikadani/SetTheSpawn/wiki/Placeholders          #
 #                                                                        #
 # [Tips]                                                                 #
 # - Use color coding '&' character, on this page:                        #
@@ -22,16 +22,38 @@
 #=========================================#
 #                Settings                 #
 #=========================================#
+# Use the Vault plugin for the plugin.
+vault: false
+
 # How many seconds do you have to wait for a player to be teleported?
 # If 0 you do not have to wait.
 teleport-delay: 3 # In seconds!
+
+# Use %sender% placeholder.
+other-player-teleported: '&e%sender%&a teleported you to spawn.'
+other-player-teleported-enable-message: false
+
+# Is it a spawn setting in separate worlds?
+# This is typical for each function!
+# If true, you will write to the spawns.yml file in the world where the player is currently in (setup).
+# If it is false, it will write to the spawns.yml file, the world name for the coordinates, and so on.
+per-world-spawn: false
+
+# Cost /spawn command.
+spawn-cost:
+  # This requires a Vault plugin.
+  enable: false
+  cost: 3.0
 
 # Cancel teleport on move.
 cancel-teleport-on-move:
   enable: true
   enable-message: true
+  # Use %prefix%, %newline% placeholder.
   teleport-cancelled: '&cCountdown cancelled, you can''t move!'
-  enable-permission: false
+  # If true, when the player moves while teleporting, he will withdraw the delay.
+  # If false, when a player moves while teleporting, he will not retract the delay.
+  enable-permission: true
   permission: 'setthespawn.bypass.movement'
 
 # When a player is being teleported, will he play an effect?
@@ -67,7 +89,7 @@ void-on-spawn:
     effect: ENDER_SIGNAL
     int: 15
   message-enable: false
-  message: '&a&lTeleportation to spawn...'
+  message: '&a&lTeleporting to spawn...'
 
 # Teleport on command.
 teleport-on-command:
@@ -92,6 +114,8 @@ spawn-teleport:
   player-join: false
   # If the player first joins the server, will it teleport to the spawn?
   player-first-join: false
+  # When the player is alive and teleported to the spawn.
+  respawn: false
 
 # How many rows should the GUI have?
 gui-rows: 1
@@ -103,7 +127,8 @@ gui-name: '&5Spawn settings'
 enable-message: true
 gui-open-message: '&aYou opened the spawn settings.'
  
-# All GUI items are here. Add slots in the same format, and it will add items to the GUI
+# All GUI items are here. Add slots in the same format, and it will add items to the GUI.
+# How to add new item in QUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-QUI%3F%E2%80%8B
 items:
   slot-0:
     item-id: 345
@@ -144,11 +169,6 @@ metrics: true
 # Check for updates.
 check-update: true
 
-# Auto plugin refresh.
-auto-refresh-enable: false
-# In minutes!
-auto-refresh-time: 10
-
 # Log in to the console with plugin messages.
 logconsole: true
 
@@ -158,7 +178,7 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.0&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.1&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
