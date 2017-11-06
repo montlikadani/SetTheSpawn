@@ -1,1 +1,13 @@
-
+# v1.1
+     Added:
+        Added per world spawn. - In separate worlds you can create spawn locations.
+        Added Vault support. - The /spawn command can now be a cost.
+        Added player respawn boolean.
+    Fixes:
+        Fixed plugin not starting.
+        Fixed file creation problems.
+        Fixed teleport cooldown remove. - The countdown did not stop.
+        Fixed icon menu not support colors.
+        Fixed player leave event. - When the player left the server during teleporting, he did not delete the delay.
+        Fixed /spawn all command there was an error in the console. - When you typed /spawn all and did not find the spawn, you wrote an error in the console.
+        Fixed spawn teleport errors.
