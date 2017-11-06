@@ -3,7 +3,7 @@
 #=========================================#
 # Default language: 'EN' - English.
 # That is the apostrophe ('') inside them you can feel free to edit.
-prefix: '&6&l[&9&lSet&2&lThe&4&lSpawn&6&l]&7&l »'
+prefix: '&6&l[&9&lSet&2&lThe&4&lSpawn&6&l]&7&l Â»'
 
 # Use %prefix%, %newline%, %perm% placeholder.
 no-permission: '&cYou don''t have permission for that!&7 (%perm%)'
@@ -16,12 +16,20 @@ unknown-sub-command: '%prefix%&c Unknown sub-command&7 %subcmd%&c.'
 spawn-no-console: '%prefix%&c Use: "&7/%command% <player;all>&c".'
 no-console: '%prefix%&c This command "&7/%command%&c" can only be used by players.'
 
+# Use %args% placeholder.
+setup-no-console: '%prefix%&c This command "&7/%command% %args%&c" can only be used by players.'
+
 # Use %file%, %world%, %x%, %y%, %z%, %yaw%, %pitch% placeholder.
 spawn-successfully-set: '%prefix%&a The spawn successfully set!%newline%&5Location:%newline%&8-&e File:&a %file%%newline%&8-&e World:&a %world%%newline%&8-&e X:&a %x%%newline%&8-&e Y:&a %y%%newline%&8-&e Z:&a %z%%newline%&8-&e Yaw:&a %yaw%%newline%&8-&e Pitch:&a %pitch%'
-spawn-deleted: '%prefix%&c The spawn successfully deleted!'
-spawn-already-deleted: '%prefix%&c The spawn already deleted!'
-no-spawn: '&cThe spawn has not yet been set!'
+spawn-deleted: '%prefix%&c The spawn successfully deleted.'
+spawn-already-deleted: '%prefix%&c The spawn already deleted.'
+no-spawn: '&cThe spawn has not yet been set.'
 teleport-all-players: '&2Everyone was teleported to the spawn.'
+world-spawn:
+  successfully-set: '%prefix%&a The&c %world%&a world spawn successfully set.'
+  already-deleted: '%prefix%&c The&7 %world%&c world spawn already deleted.'
+  spawn-deleted: '%prefix%&c The&8 %world%&c world spawn successfully deleted.'
+  teleport-success: '&6Teleporting to&5 %world%&6...'
 
 # Use %player% placeholder.
 spawn-teleport-success: '&6Teleporting...'
@@ -30,7 +38,10 @@ teleport-other-spawn: '&2You teleported&5 %player%&2 player to spawn!'
 error-spawn-not-set: '%prefix%&4 ERROR:&c The spawn location has NOT BEEN set! Type "&7/setspawn&c" to set spawn position.'
 
 # Use %seconds% placeholder.
-teleport-wait-msg: '&6Teleporting in&c %seconds%&6 seconds ...&4 Don''t move!'
+teleport-wait-msg: '&6Teleporting in&c %seconds%&6 seconds...&4 Don''t move!'
+
+# Use %cost% placeholder.
+not-enough-money: '&cNo money to execute this command.&e Cost:&a $%cost%'
 
 # This feature lists all the chat panel help.
 chat-messages:
