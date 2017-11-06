@@ -12,4 +12,4 @@
         Fixed /spawn all command there was an error in the console. - When you typed /spawn all and did not find the spawn, you wrote an error in the console.
         Fixed spawn teleport errors.
     Removed:
-        Removed auto refresh boolean. - It was unnecessary.
+        Removed auto refresh. - It was unnecessary.
