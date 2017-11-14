@@ -1,3 +1,18 @@
+# v1.2
+     Added:
+        Added spawn sign. - Now you can spawn on the sign.
+        Added multiple permissions.
+    Changed:
+        Changed main-info-stscommand-on-default to default-can-see-plugin-information boolean.
+    Fixes:
+        Fixed teleport cooldown message it also writes 0. - When a player teleports and teleport cooldown is set to 0, also writes the message.
+        Fixed Vault registering & unregistering.
+        Fixed per world spawn it did not work and makes a mistake.
+        Fixed cancel teleport. - Did not delete the teleport delay, so the server was lagged.
+        Fixed plugin not starting.
+        Fixed file creation problems.
+    Removed:
+        Removed some spaces & code.
 # v1.1
      Added:
         Added per world spawn. - In separate worlds you can create spawn locations.
