@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.1
+version: 1.2
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -59,3 +59,12 @@ permissions:
   setthespawn.spawn.setup:
     description: Spawn settings gui.
     default: false
+  setthespawn.sign.create:
+    description: Allows a player to create a spawn sign.
+    default: false
+  setthespawn.sign.break:
+    description: Allows a player to break a spawn sign.
+    default: false
+  setthespawn.sign.use:
+    description: Allows a player to use a spawn sign.
+    default: true
