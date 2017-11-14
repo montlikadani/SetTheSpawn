@@ -3,7 +3,7 @@ package hu.montlikadani.SetTheSpawn;
 import org.bukkit.permissions.Permission;
 
 public class Permissions {
-	
+
 	public Permission perm = new Permission("setthespawn.cmd.nocooldown");
 	public Permission perm1 = new Permission("setthespawn.plugininfo");
 	public Permission perm2 = new Permission("setthespawn.help");
@@ -18,5 +18,8 @@ public class Permissions {
 	public Permission perm11 = new Permission("setthespawn.spawn.teleport.all");
 	public Permission perm12 = new Permission("setthespawn.spawn.teleport.other");
 	public Permission perm13 = new Permission("setthespawn.spawn.setup");
+	public Permission perm14 = new Permission("setthespawn.sign.create");
+	public Permission perm15 = new Permission("setthespawn.sign.break");
+	public Permission perm16 = new Permission("setthespawn.sign.use");
 
 }
