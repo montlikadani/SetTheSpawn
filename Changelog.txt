@@ -4,6 +4,7 @@
         Added multiple permissions.
     Changed:
         Changed main-info-stscommand-on-default to default-can-see-plugin-information boolean.
+        Changed enable-message to gui-message-enable boolean.
     Fixes:
         Fixed teleport cooldown message it also writes 0. - When a player teleports and teleport cooldown is set to 0, also writes the message.
         Fixed Vault registering & unregistering.
