@@ -1,7 +1,7 @@
 #=================================OOO====================================#
 #                      SetTheSpawn Configuration File                    #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.1                                   #
+# config.yml file. Plugin version: 1.2                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
@@ -44,6 +44,10 @@ spawn-cost:
   # This requires a Vault plugin.
   enable: false
   cost: 3.0
+  # Sign usage price. (Same as /spawn command.)
+  sign:
+    enable: false
+    cost: 2.0
 
 # Cancel teleport on move.
 cancel-teleport-on-move:
@@ -117,6 +121,56 @@ spawn-teleport:
   # When the player is alive and teleported to the spawn.
   respawn: false
 
+# Spawn sign settings.
+spawn-sign:
+  # If the player does not have permission, the sign is broken.
+  no-permission-break-sign:
+    # If it is true, it will break the sign.
+    # If it is false, it does not break the sign.
+    enable: false
+    # If it is 'enable: false', it writes to the sign.
+    setline:
+      enable: true
+      line0: '&cYou do not have'
+      line1: '&cpermission'
+      line2: '&cto create'
+      line3: '&ca sign!'
+  # If the spawn is not set up and what to write.
+  no-spawn:
+    line0: '&c[Spawn]'
+    # Use %text% placeholder.
+    line1: '%text%'
+    line2: '%text%'
+    line3: '%text%'
+  # If the spawn is set and what to write.
+  spawn-created:
+    line0: '%color%[Spawn]' # Use %color% placeholder.
+    line1: '%text%'
+    line2: '%text%'
+    line3: '%text%'
+    # If the world spawn is set and what to write.
+    per-world:
+      line0: '%color%[Spawn]'
+      # Use %world% placeholder.
+      line1: '&6%world%'
+      line2: '%text%'
+      line3: '%text%'
+  # Play particle effect when you create a spawn sign?
+  play-particle-effect-on-sign-create:
+    enable: true
+    # All particle effects: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    particle-effect-type: "EXPLOSION_LARGE"
+    duration: 5
+  # Enable the message when a player created a spawn sign?
+  sign-create-enable-message: false
+  sign-created: '%prefix%&a The spawn sign was successfully created!'
+  # What color should the [Spawn] first line be?
+  # IMPORTANT! Colors in BIG letters!
+  spawn-sign-color-line0: 'BLUE'
+  # Enables the message when the player has broken the spawn sign.
+  spawn-sign-break-msg-enable: false
+  spawn-sign-break-msg: '&cYou broke the spawn sign!'
+
 # How many rows should the GUI have?
 gui-rows: 1
  
@@ -124,7 +178,7 @@ gui-rows: 1
 gui-name: '&5Spawn settings'
 
 # Enable this message when the player has opened the gui?
-enable-message: true
+gui-message-enable: true
 gui-open-message: '&aYou opened the spawn settings.'
  
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
@@ -178,12 +232,13 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.1&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.2&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
 # The default is allowed to see the plugin information.
-main-info-stscommand-on-default: false
+# Permission: setthespawn.plugininfo
+default-can-see-plugin-information: false
 
 # Command waiting period.
 # If you set it to 0 you will not have to wait.
