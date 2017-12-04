@@ -21,5 +21,7 @@ public class Permissions {
 	public Permission perm14 = new Permission("setthespawn.sign.create");
 	public Permission perm15 = new Permission("setthespawn.sign.break");
 	public Permission perm16 = new Permission("setthespawn.sign.use");
+	public Permission perm17 = new Permission(SetTheSpawn.getInstance().getConfig().getString("spawn-cost.permission"));
+	public Permission perm18 = new Permission(SetTheSpawn.getInstance().getConfig().getString("spawn-cost.sign.permission"));
 
 }
