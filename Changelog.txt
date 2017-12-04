@@ -1,3 +1,14 @@
+# v1.3
+     Added:
+        Added disabled worlds. - Now the worlds can be disabled.
+        Added check-fly-before-teleport boolean & message. - Now flight mode can not be teleported.
+        Added spawn command & sign cost permission.
+    High fixes:
+        High fixes when the player has multiple /spawn command (when teleported), then the server started lag and freezing.
+    Fixes:
+        Fixed when reloading the plugin, it deletes the currently executed /spawn command delay.
+    Changed:
+        Changed per world spawn location set to x, y, z locations.
 # v1.2
      Added:
         Added spawn sign. - Now you can spawn on the sign.
