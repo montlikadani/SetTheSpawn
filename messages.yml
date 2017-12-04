@@ -28,6 +28,7 @@ spawn-deleted: '%prefix%&c The spawn successfully deleted.'
 spawn-already-deleted: '%prefix%&c The spawn already deleted.'
 no-spawn: '&cThe spawn has not yet been set.'
 teleport-all-players: '&2Everyone was teleported to the spawn.'
+world-not-allowed: '&cIn this world&7 %world%&c is not allowed to set spawn!'
 world-spawn:
   successfully-set: '%prefix%&a The&c %world%&a world spawn successfully set.'
   already-deleted: '%prefix%&c The&7 %world%&c world spawn already deleted.'
