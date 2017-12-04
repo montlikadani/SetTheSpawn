@@ -1,7 +1,7 @@
 #=================================OOO====================================#
 #                      SetTheSpawn Configuration File                    #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.2                                   #
+# config.yml file. Plugin version: 1.3                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
@@ -27,7 +27,8 @@ vault: false
 
 # How many seconds do you have to wait for a player to be teleported?
 # If 0 you do not have to wait.
-teleport-delay: 3 # In seconds!
+# Do not use it because it may be lag!
+teleport-delay: 0 # In seconds!
 
 # Use %sender% placeholder.
 other-player-teleported: '&e%sender%&a teleported you to spawn.'
@@ -39,21 +40,40 @@ other-player-teleported-enable-message: false
 # If it is false, it will write to the spawns.yml file, the world name for the coordinates, and so on.
 per-world-spawn: false
 
+# In which worlds can spawn not be set?
+# If you do not want one of them, use it like this: disabled-worlds: []
+disabled-worlds: []
+
+# Check if the player is flying mode?
+# If it is true, it will undo the teleport delay.
+# If it is false, you can teleport in flight too.
+check-fly-before-teleport:
+  enable: false
+  # Use %prefix%, %newline% placeholder.
+  message: '&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!'
+
 # Cost /spawn command.
 spawn-cost:
   # This requires a Vault plugin.
   enable: false
+  enable-permission: true
+  # If this is specified at the rank, they can use the /spawn command without payment.
+  # If not specified, the /spawn command must be paid.
+  permission: 'setthespawn.bypass.spawncost'
   cost: 3.0
   # Sign usage price. (Same as /spawn command.)
   sign:
     enable: false
+    enable-permission: true
+    # If this is specified at the rank, they can use the spawn sign without payment.
+    # If not specified, the spawn sign usage must be paid.
+    permission: 'setthespawn.bypass.signcost'
     cost: 2.0
 
 # Cancel teleport on move.
 cancel-teleport-on-move:
   enable: true
   enable-message: true
-  # Use %prefix%, %newline% placeholder.
   teleport-cancelled: '&cCountdown cancelled, you can''t move!'
   # If true, when the player moves while teleporting, he will withdraw the delay.
   # If false, when a player moves while teleporting, he will not retract the delay.
@@ -66,7 +86,7 @@ teleport-effect:
   # All effects:
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
   effect: ENDER_SIGNAL
-  int: 10
+  duration: 10
 
 # Teleport sound playback.
 teleport-sound:
@@ -232,7 +252,7 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.2&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.3&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
