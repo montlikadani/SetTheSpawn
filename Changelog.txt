@@ -4,7 +4,7 @@
         Added check-fly-before-teleport boolean & message. - Now flight mode can not be teleported.
         Added spawn command & sign cost permission.
     High fixes:
-        High fixes when the player has multiple /spawn command (when teleported), then the server started lag and freezing. High fixes when the player has multiple /spawn command (when teleported), then the server started lag and freezing. Issue: https://github.com/montlikadani/SetTheSpawn/issues/1
+        High fixes when the player has multiple /spawn command (when teleported), then the server started lag and freezing. High fixes when the player has multiple /spawn command (when teleported), then the server started lag and freezing. Issue: https://github.com/montlikadani/SetTheSpawn/issues/1 Reported by: @XxUnicumxX 
     Fixes:
         Fixed when reloading the plugin, it deletes the currently executed /spawn command delay.
     Changed:
