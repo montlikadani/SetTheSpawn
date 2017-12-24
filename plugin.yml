@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.3
+version: 1.4
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -23,9 +23,6 @@ commands:
     usage: <command>
 
 permissions:
-  setthespawn.cmd.nocooldown:
-    description: Command wait time permission.
-    default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.
     default: false
