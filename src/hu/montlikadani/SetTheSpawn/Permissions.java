@@ -4,7 +4,6 @@ import org.bukkit.permissions.Permission;
 
 public class Permissions {
 
-	public Permission perm = new Permission("setthespawn.cmd.nocooldown");
 	public Permission perm1 = new Permission("setthespawn.plugininfo");
 	public Permission perm2 = new Permission("setthespawn.help");
 	public Permission perm3 = new Permission("setthespawn.reload");
