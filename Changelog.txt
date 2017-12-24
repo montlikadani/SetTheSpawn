@@ -1,3 +1,15 @@
+# v1.4
+     Added:
+        Added check sneak while teleport function. - Checks during teleportation by pressing the SHIFT button to cancel the teleportation.
+        Added start spawn, end spawn & player move title.
+        Added spawn-sign enable boolean. - Now you can disable/enable spawn signs.
+    Fixes:
+        Fixed /spawn command multiple times. - The /spawn command, once started, can not be repeated until the delay has expired.
+        Fixed all tasks stopped. - It has stopped all tasks that run on the server only.
+    High fixes:
+        High fix when you used the /spawn command several times and had been teleported, the server could be slow and frozen.
+    Removed:
+        Removed command wait time.
 # v1.3
      Added:
         Added disabled worlds. - Now the worlds can be disabled.
