@@ -1,7 +1,7 @@
 #=================================OOO====================================#
 #                      SetTheSpawn Configuration File                    #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.3                                   #
+# config.yml file. Plugin version: 1.4                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
@@ -27,7 +27,6 @@ vault: false
 
 # How many seconds do you have to wait for a player to be teleported?
 # If 0 you do not have to wait.
-# Do not use it because it may be lag!
 teleport-delay: 0 # In seconds!
 
 # Use %sender% placeholder.
@@ -51,6 +50,11 @@ check-fly-before-teleport:
   enable: false
   # Use %prefix%, %newline% placeholder.
   message: '&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!'
+
+# When a player presses the SHIFT button while teleporting, and sits in snake mode, will it cancel teleportation?
+check-sneak-while-teleport:
+  enable: false
+  message: '&cTeleporting is canceled because snake mode is enabled.'
 
 # Cost /spawn command.
 spawn-cost:
@@ -99,6 +103,43 @@ teleport-sound:
   volume: 10
   pitch: 1
 
+# Send title if:
+title:
+  # When you have started teleporting, a title will also be displayed.
+  start-spawn:
+    enable: false
+    # Use %seconds% placeholder.
+    title: '&aTeleporting in'
+    subtitle: '&6%seconds%&a seconds'
+    # The time it takes for the title to fade into the screen. (In ticks)
+    fade-in: 10
+    # The time it takes for the title to stay on the screen. (In ticks)
+    stay: 30
+    # The time it takes for the title to fade out of the screen. (In ticks)
+    fade-out: 60
+  # This is when the player has teleported to the spawn and displays the title.
+  end-spawn:
+    enable: false
+    title: '&3Teleport'
+    subtitle: '&asuccess!'
+    # The time it takes for the title to fade into the screen. (In ticks)
+    fade-in: 10
+    # The time it takes for the title to stay on the screen. (In ticks)
+    stay: 30
+    # The time it takes for the title to fade out of the screen. (In ticks)
+    fade-out: 60
+  # When a player moves while teleporting.
+  player-moved:
+    enable: false
+    title: '&cYou moved!'
+    subtitle: '&eTeleport cancelled.'
+    # The time it takes for the title to fade into the screen. (In ticks)
+    fade-in: 10
+    # The time it takes for the title to stay on the screen. (In ticks)
+    stay: 30
+    # The time it takes for the title to fade out of the screen. (In ticks)
+    fade-out: 50
+
 # When does the player void, will he teleport to the spawn?
 void-on-spawn:
   enable: false
@@ -111,7 +152,7 @@ void-on-spawn:
     # All effects:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
     effect: ENDER_SIGNAL
-    int: 15
+    duration: 15
   message-enable: false
   message: '&a&lTeleporting to spawn...'
 
@@ -143,6 +184,8 @@ spawn-teleport:
 
 # Spawn sign settings.
 spawn-sign:
+  # Allows you to create and use the spawn sign.
+  enable: true
   # If the player does not have permission, the sign is broken.
   no-permission-break-sign:
     # If it is true, it will break the sign.
@@ -252,21 +295,13 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.3&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.4&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
 # The default is allowed to see the plugin information.
 # Permission: setthespawn.plugininfo
 default-can-see-plugin-information: false
-
-# Command waiting period.
-# If you set it to 0 you will not have to wait.
-# Measured in seconds. 1 seconds - 20 ticks.
-# (This feature is known that there is no excessive lagg.)
-# Use %seconds% (This placeholder is valid only here), %newline%, %prefix% placeholder.
-command-wait-time: 3
-command-wait: '%prefix%&c Please wait&7 %seconds%&c seconds to use again!'
 
 # Unknown-command - If more than one word/letter you write to it.
 # Example: /sts reload something...
