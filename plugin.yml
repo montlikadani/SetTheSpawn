@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.4
+version: 1.5
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -65,3 +65,6 @@ permissions:
   setthespawn.sign.use:
     description: Allows a player to use a spawn sign.
     default: true
+  setthespawn.countdown.stopall:
+    description: Allows a player to use /sts stopalltask command.
+    default: false
