@@ -1,3 +1,18 @@
+# v1.5
+Added:
+    Added /sts stopalltask command.
+    Added cancel-teleport move & jump functions.
+    Added title player jump function.
+Fixes:
+    Fixed reload the plugin, close players inventory menu. - When reload the plugin, it closed the inventory of the players.
+    Fixed player went to sneak mode and did not start teleportation, stopped all the ongoing teleports.
+    Fixed player moved, kept was continually verifying whether the player was moved during teleport, so the server was frozen.
+Removed:
+    Removed cancel-teleport-on-move function.
+Changed:
+    Changed spawn-sign-color-line0 to sign-color-line0 string.
+    Changed spawn-sign-break-msg-enable to sign-break-msg-enable boolean.
+    Changed spawn-sign-break-msg to sign-break-msg string.
 # v1.4
      Added:
         Added check sneak while teleport function. - Checks during teleportation by pressing the SHIFT button to cancel the teleportation.
