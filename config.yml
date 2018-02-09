@@ -1,7 +1,7 @@
 #=================================OOO====================================#
-#                      SetTheSpawn Configuration File                    #
+#                    SetTheSpawn Configuration File                      #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.4                                   #
+# config.yml file. Plugin version: 1.5                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
@@ -56,9 +56,9 @@ check-sneak-while-teleport:
   enable: false
   message: '&cTeleporting is canceled because snake mode is enabled.'
 
-# Cost /spawn command.
+# Cost /spawn command or sign usage.
+# This requires a Vault plugin.
 spawn-cost:
-  # This requires a Vault plugin.
   enable: false
   enable-permission: true
   # If this is specified at the rank, they can use the /spawn command without payment.
@@ -74,15 +74,26 @@ spawn-cost:
     permission: 'setthespawn.bypass.signcost'
     cost: 2.0
 
-# Cancel teleport on move.
-cancel-teleport-on-move:
-  enable: true
-  enable-message: true
-  teleport-cancelled: '&cCountdown cancelled, you can''t move!'
-  # If true, when the player moves while teleporting, he will withdraw the delay.
-  # If false, when a player moves while teleporting, he will not retract the delay.
-  enable-permission: true
-  permission: 'setthespawn.bypass.movement'
+# Cancel teleport if:
+cancel-teleport:
+  # Player was moved.
+  move:
+    enable: true
+    enable-message: true
+    teleport-cancelled: '&cCountdown cancelled, you can''t move!'
+    # If true when the player moves, the teleport delay will cancel.
+    # If false when the player moves, the teleport delay does NOT cancel it.
+    enable-permission: true
+    permission: 'setthespawn.bypass.movement'
+  # Player was jump.
+  jump:
+    enable: true
+    enable-message: true
+    teleport-cancelled: '&cCountdown cancelled, you can''t jump!'
+    # If true when the player jump, the teleport delay will cancel.
+    # If false when the player jump, the teleport delay does NOT cancel it.
+    enable-permission: true
+    permission: 'setthespawn.bypass.jump'
 
 # When a player is being teleported, will he play an effect?
 teleport-effect:
@@ -139,8 +150,19 @@ title:
     stay: 30
     # The time it takes for the title to fade out of the screen. (In ticks)
     fade-out: 50
+  # When a player jump while teleporting.
+  player-jump:
+    enable: false
+    title: '&cYou jumped!'
+    subtitle: '&eTeleport cancelled.'
+    # The time it takes for the title to fade into the screen. (In ticks)
+    fade-in: 10
+    # The time it takes for the title to stay on the screen. (In ticks)
+    stay: 30
+    # The time it takes for the title to fade out of the screen. (In ticks)
+    fade-out: 50
 
-# When does the player void, will he teleport to the spawn?
+# When does the player void, will the player teleport to the spawn?
 void-on-spawn:
   enable: false
   # If it is true, it does not hurt.
@@ -163,12 +185,14 @@ teleport-on-command:
   # Use %player%, %player-displayname%, %newline%, %prefix%, %world%, %player-gamemode%, %max-players%, %online-players%, %player-health%, %player-max-health% placeholder.
   player-command:
     enable: false
+    # If you do not want a command, use it as follows: commands: []
     commands:
     - 'money'
     - 'kit'
   # Console command.
   console-command:
     enable: false
+    # If you do not want a command, use it as follows: commands: []
     commands:
     - 'eco take %player% 50'
     - 'money'
@@ -229,21 +253,21 @@ spawn-sign:
   sign-created: '%prefix%&a The spawn sign was successfully created!'
   # What color should the [Spawn] first line be?
   # IMPORTANT! Colors in BIG letters!
-  spawn-sign-color-line0: 'BLUE'
+  sign-color-line0: 'BLUE'
   # Enables the message when the player has broken the spawn sign.
-  spawn-sign-break-msg-enable: false
-  spawn-sign-break-msg: '&cYou broke the spawn sign!'
+  sign-break-msg-enable: false
+  sign-break-msg: '&cYou broke the spawn sign!'
 
 # How many rows should the GUI have?
 gui-rows: 1
- 
+
 # What should the name of the GUI be?
 gui-name: '&5Spawn settings'
 
 # Enable this message when the player has opened the gui?
 gui-message-enable: true
 gui-open-message: '&aYou opened the spawn settings.'
- 
+
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
 # How to add new item in QUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-QUI%3F%E2%80%8B
 items:
@@ -276,8 +300,6 @@ items:
 #             Plugin Settings             #
 #=========================================#
 # The SetTheSpawn plugin is disabled (false) or enabled (true).
-# As this function is set to false, the plugin will shut itself down and no commands (which the plugin will detect) will be detected.
-# To reload, write to true and refresh the server /reload.
 enabled: true
 
 # bStats Metrics.
@@ -295,7 +317,7 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.4&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.5&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
