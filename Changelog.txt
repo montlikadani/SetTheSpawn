@@ -1,3 +1,15 @@
+# v1.6
+Added:
+    Added cancel-teleport damage function.
+    Added title player damage function.
+    Added spawn sign line 1 to 'everybody' to teleport all online players.
+    Added permission for teleport all online players with sign. setthespawn.sign.use.everybody
+    Added height integer to void on spawn configuration.
+Fixes:
+    Fixed when the player first or joined the server, did not teleport to the spawn.
+Removed:
+    Removed %file%, %x%, %y%, %z%, %yaw%, %pitch% placeholders.
+
 # v1.5
 Added:
     Added /sts stopalltask command.
