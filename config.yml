@@ -1,7 +1,7 @@
 #=================================OOO====================================#
 #                    SetTheSpawn Configuration File                      #
 #=================================OOO====================================#
-# config.yml file. Plugin version: 1.5                                   #
+# config.yml file. Plugin version: 1.6                                   #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
 # [Default configurations]                                               #
@@ -29,7 +29,7 @@ vault: false
 # If 0 you do not have to wait.
 teleport-delay: 0 # In seconds!
 
-# Use %sender% placeholder.
+# Use %sender%, %newline%, %prefix% placeholder.
 other-player-teleported: '&e%sender%&a teleported you to spawn.'
 other-player-teleported-enable-message: false
 
@@ -48,7 +48,6 @@ disabled-worlds: []
 # If it is false, you can teleport in flight too.
 check-fly-before-teleport:
   enable: false
-  # Use %prefix%, %newline% placeholder.
   message: '&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!'
 
 # When a player presses the SHIFT button while teleporting, and sits in snake mode, will it cancel teleportation?
@@ -94,6 +93,15 @@ cancel-teleport:
     # If false when the player jump, the teleport delay does NOT cancel it.
     enable-permission: true
     permission: 'setthespawn.bypass.jump'
+  # When the player is attacked.
+  damage:
+    enable: true
+    enable-message: true
+    teleport-cancelled: '&cCountdown cancelled, you are in combat!'
+    # If true when the player is attacked, the teleport delay will cancel.
+    # If false when the player is attacked, the teleport delay does NOT cancel it.
+    enable-permission: true
+    permission: 'setthespawn.bypass.damage'
 
 # When a player is being teleported, will he play an effect?
 teleport-effect:
@@ -161,10 +169,24 @@ title:
     stay: 30
     # The time it takes for the title to fade out of the screen. (In ticks)
     fade-out: 50
+  # When teleporting player are attacked while teleporting.
+  player-damage:
+    enable: false
+    title: '&cA player was attacked!'
+    subtitle: '&eTeleport cancelled.'
+    # The time it takes for the title to fade into the screen. (In ticks)
+    fade-in: 10
+    # The time it takes for the title to stay on the screen. (In ticks)
+    stay: 30
+    # The time it takes for the title to fade out of the screen. (In ticks)
+    fade-out: 50
 
 # When does the player void, will the player teleport to the spawn?
 void-on-spawn:
   enable: false
+  # At that point, the player will be teleported to the spawn.
+  # Example: 5 - so Y:5.
+  height: 0
   # If it is true, it does not hurt.
   # If it is false, it hurts.
   fall-distance: true
@@ -180,9 +202,8 @@ void-on-spawn:
 
 # Teleport on command.
 teleport-on-command:
-  enable: false
   # Player command.
-  # Use %player%, %player-displayname%, %newline%, %prefix%, %world%, %player-gamemode%, %max-players%, %online-players%, %player-health%, %player-max-health% placeholder.
+  # Use %player%, %player-displayname%, %world%, %player-gamemode%, %max-players%, %online-players%, %player-health%, %player-max-health% placeholder.
   player-command:
     enable: false
     # If you do not want a command, use it as follows: commands: []
@@ -203,19 +224,19 @@ spawn-teleport:
   player-join: false
   # If the player first joins the server, will it teleport to the spawn?
   player-first-join: false
-  # When the player is alive and teleported to the spawn.
+  # When the player is died and teleported to the spawn.
   respawn: false
 
 # Spawn sign settings.
 spawn-sign:
   # Allows you to create and use the spawn sign.
   enable: true
-  # If the player does not have permission, the sign is broken.
-  no-permission-break-sign:
+  # If the player does not have permission to create a sign.
+  no-permission-create-sign:
     # If it is true, it will break the sign.
     # If it is false, it does not break the sign.
-    enable: false
-    # If it is 'enable: false', it writes to the sign.
+    break-sign: false
+    # If it is 'enable: true', it writes to the sign.
     setline:
       enable: true
       line0: '&cYou do not have'
@@ -269,7 +290,7 @@ gui-message-enable: true
 gui-open-message: '&aYou opened the spawn settings.'
 
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
-# How to add new item in QUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-QUI%3F%E2%80%8B
+# How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
 items:
   slot-0:
     item-id: 345
@@ -281,7 +302,7 @@ items:
     command: setspawn
   slot-1:
     item-id: 368
-    name: '&6Spawn'
+    name: '&6Teleport'
     lore:
       line-0: '&7------------'
       line-1: '&aTeleport to the spawn.'
@@ -292,7 +313,7 @@ items:
     name: '&4Delete spawn'
     lore:
       line-0: '&7------------'
-      line-1: '&5Delete spawn.'
+      line-1: '&5Delete spawn location.'
       line-2: '&7------------'
     command: delspawn
 
@@ -308,7 +329,7 @@ metrics: true
 # Check for updates.
 check-update: true
 
-# Log in to the console with plugin messages.
+# Log plugin messages into console.
 logconsole: true
 
 # Logging to file messages.
@@ -317,7 +338,7 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.5&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.6&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
@@ -327,8 +348,7 @@ default-can-see-plugin-information: false
 
 # Unknown-command - If more than one word/letter you write to it.
 # Example: /sts reload something...
-# Use %newline%, %command%, %prefix% placeholder.
-# %command% - When you type the command (example: /setthespawn), it writes the command to it.
+# Use %command% placeholder.
 # This feature is NOT enter into the unknown command Minecraft, it's just your own.
 unknown-command-enable: true
 unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
