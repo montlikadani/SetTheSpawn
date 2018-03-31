@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.5
+version: 1.6
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -23,6 +23,9 @@ commands:
     usage: <command>
 
 permissions:
+  setthespawn.spawn.use:
+    description: Allows a player to use /spawn command.
+    default: true
   setthespawn.help:
     description: Help commands for SetTheSpawn.
     default: false
@@ -30,19 +33,16 @@ permissions:
     description: Reload the config files.
     default: op
   setthespawn.plugindisable:
-    description: Disable the plugin permission.
+    description: Allow to player to disable plugin.
     default: op
   setthespawn.cmd.tabcomplete:
     description: You can use [TAB] in commands.
     default: false
   setthespawn.setspawn:
-    description: You can use /setspawn command.
+    description: Allows a player to use /setspawn command.
     default: false
-  setthespawn.spawn.use:
-    description: You can use /spawn command.
-    default: true
   setthespawn.delspawn:
-    description: You can use /deletespawn command.
+    description: Allows a player to use /deletespawn command.
     default: false
   setthespawn.bypass.cooldown:
     description: Bypass teleport cooldown permission.
@@ -54,7 +54,7 @@ permissions:
     description: Teleport other player to spawn permission.
     default: false
   setthespawn.spawn.setup:
-    description: Spawn settings gui.
+    description: Allows a player to use spawn settings gui.
     default: false
   setthespawn.sign.create:
     description: Allows a player to create a spawn sign.
@@ -67,4 +67,7 @@ permissions:
     default: true
   setthespawn.countdown.stopall:
     description: Allows a player to use /sts stopalltask command.
+    default: false
+  setthespawn.sign.use.everybody:
+    description: Allows a player to use in sign everybody line to teleport all online players.
     default: false
