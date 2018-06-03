@@ -70,11 +70,14 @@ chat-messages:
 - ''
 - '&8/&a%command%&b [+TAB]&5 -&6 Main plugin info.'
 - '&8/&a%command% disable&5 -&6 Disable the plugin.'
+- '&8/&a%command% reload&3 (or rl)&5 -&6 Reload the plugin.'
 - '&8/&a%command% help&5 -&6 Help commands.'
-- '&8/&a%command% reload&3 (or rl)&5 -&6 Reload the config files.'
 - '&8/&a%command% setup&5 -&6 Open the gui setup.'
 - '&8/&a%command% stopalltask&5 -&6 Stop all current task.'
 - '&8/&asetspawn&5 -&6 Set the spawn location.'
 - '&8/&adeletespawn&3 (or delspawn)&5 -&6 Delete the spawn location.'
 - '&8/&aspawn&9 [player&2;&9all]&5 -&6 Teleport to the spawn location.'
 - '&e&m-----------------------------------------'
+
+# DO NOT CHANGE THIS!
+config-version: 1
