@@ -1,3 +1,21 @@
+# v1.7
+Added:
+    Added support for setthespawn.* permission. - To access for all permissions.
+    Added teleport op players boolean to configuration.
+    Added version checker to configurations. - If the version number abandoned.
+    Added teleport to world spawn if spawn not found boolean to configuration.
+    Added progress bar functions.
+Fixes:
+    Fixed some config loading problems.
+    Fixed when the per world was enabled and the sign has everybody line 1 not shown in the sign.
+    Fixed did not find the spawn and sent a long error when the respawn boolean was enabled.
+    Fixed some minor issues with delspawn & setspawn command.
+Removed:
+    Removed %max-players% & %online-players% placeholder.
+Other:
+    Now supports everyone in spawn sign line 1.
+    Now the configurations successfully creating it when reload the plugin.
+
 # v1.6
 Added:
     Added cancel-teleport damage function.
