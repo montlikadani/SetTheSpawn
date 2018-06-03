@@ -4,7 +4,7 @@
 # config.yml file. Plugin version: ${version}                            #
 # Author, created by: montlikadani                                       #
 #=================================OOO====================================#
-# [Default configurations]                                               #
+# [Default configuration]                                                #
 # https://github.com/montlikadani/SetTheSpawn/blob/master/config.yml     #
 #                                                                        #
 # [Placeholders]                                                         #
@@ -17,8 +17,6 @@
 # https://github.com/montlikadani/SetTheSpawn/issues                     #
 #=================================OOO====================================#
 
-# If these number mark (#) are in the way, you can safely remove it.
-
 #=========================================#
 #                Settings                 #
 #=========================================#
@@ -28,6 +26,31 @@ vault: false
 # How many seconds do you have to wait for a player to be teleported?
 # If 0 you do not have to wait.
 teleport-delay: 0 # In seconds!
+
+# Progress bar.
+progress-bar:
+  enable: false
+  # Progress bar size.
+  bar-size: 30.0
+  # Bar update fast. (In ticks!)
+  fast: 2
+  # Teleport display mark.
+  mark: '|'
+  # When the teleport is ready.
+  done-color: '&a&l'
+  # When teleport is not ready yet.
+  not-done-color: '&c&l'
+  # Use %output%, %time% placeholder.
+  message-format: '&aTeleporting in:&7&l [%output%&7&l]&6 (&8%time%&6)'
+
+# If the spawn can not be found, teleport it to the world spawn?
+teleport-to-world-spawn-if-spawn-not-found: true
+
+# Teleport op players to spawn. (Sign & spawn command)
+# If false not teleport op players.
+# If true teleport op players to spawn.
+# This only sign & command work. (If everybody teleport)
+teleport-op-players: false
 
 # Use %sender%, %newline%, %prefix% placeholder.
 other-player-teleported: '&e%sender%&a teleported you to spawn.'
@@ -44,7 +67,7 @@ per-world-spawn: false
 disabled-worlds: []
 
 # Check if the player is flying mode?
-# If it is true, it will undo the teleport delay.
+# If it is true, it will cancel the teleport delay.
 # If it is false, you can teleport in flight too.
 check-fly-before-teleport:
   enable: false
@@ -103,7 +126,7 @@ cancel-teleport:
     enable-permission: true
     permission: 'setthespawn.bypass.damage'
 
-# When a player is being teleported, will he play an effect?
+# When a player is being teleported, will plays an effect?
 teleport-effect:
   enable: true
   # All effects:
@@ -202,18 +225,16 @@ void-on-spawn:
 
 # Teleport on command.
 teleport-on-command:
-  # Player command.
-  # Use %player%, %player-displayname%, %world%, %player-gamemode%, %max-players%, %online-players%, %player-health%, %player-max-health% placeholder.
+  # Player commands.
+  # Use %player%, %player-displayname%, %world%, %player-gamemode%, %player-health%, %player-max-health% placeholder.
   player-command:
     enable: false
-    # If you do not want a command, use it as follows: commands: []
     commands:
     - 'money'
     - 'kit'
-  # Console command.
+  # Console commands.
   console-command:
     enable: false
-    # If you do not want a command, use it as follows: commands: []
     commands:
     - 'eco take %player% 50'
     - 'money'
@@ -244,9 +265,9 @@ spawn-sign:
       line2: '&cto create'
       line3: '&ca sign!'
   # If the spawn is not set up and what to write.
+  # Use %text% placeholder.
   no-spawn:
     line0: '&c[Spawn]'
-    # Use %text% placeholder.
     line1: '%text%'
     line2: '%text%'
     line3: '%text%'
@@ -256,25 +277,37 @@ spawn-sign:
     line1: '%text%'
     line2: '%text%'
     line3: '%text%'
+    everybody:
+      # Use %all% placeholder.
+      line0: '%color%[Spawn]' # Use %color% placeholder.
+      line1: '%all%'
+      line2: '%text%'
+      line3: '%text%'
     # If the world spawn is set and what to write.
     per-world:
-      line0: '%color%[Spawn]'
       # Use %world% placeholder.
+      line0: '%color%[Spawn]' # Use %color% placeholder.
       line1: '&6%world%'
       line2: '%text%'
       line3: '%text%'
+      everybody:
+        # Use %all%, %world% placeholder.
+        line0: '%color%[Spawn]' # Use %color% placeholder.
+        line1: '%all%'
+        line2: '%world%'
+        line3: '%text%'
   # Play particle effect when you create a spawn sign?
   play-particle-effect-on-sign-create:
     enable: true
     # All particle effects: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
-    particle-effect-type: "EXPLOSION_LARGE"
+    type: EXPLOSION_LARGE
     duration: 5
   # Enable the message when a player created a spawn sign?
   sign-create-enable-message: false
   sign-created: '%prefix%&a The spawn sign was successfully created!'
   # What color should the [Spawn] first line be?
   # IMPORTANT! Colors in BIG letters!
-  sign-color-line0: 'BLUE'
+  sign-color-line0: BLUE
   # Enables the message when the player has broken the spawn sign.
   sign-break-msg-enable: false
   sign-break-msg: '&cYou broke the spawn sign!'
@@ -338,7 +371,7 @@ log-to-file: true
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
 plugin-enable-message: true
-plugin-enable: '%prefix%&a The plugin successfully enabled&6 v1.6&a!'
+plugin-enable: '%prefix%&a The plugin successfully enabled&6 v${version}&a!'
 plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
@@ -352,3 +385,6 @@ default-can-see-plugin-information: false
 # This feature is NOT enter into the unknown command Minecraft, it's just your own.
 unknown-command-enable: true
 unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
+
+# DO NOT CHANGE THIS!
+config-version: 1
