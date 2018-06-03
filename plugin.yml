@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.6
+version: 1.7
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -23,21 +23,28 @@ commands:
     usage: <command>
 
 permissions:
+  setthespawn.*:
+     description: Gives access to all SetTheSpawn permissions.
+     children:
+       setthespawn.spawn.use: true
+       setthespawn.setspawn: true
+       setthespawn.delspawn: true
+       setthespawn.bypass.cooldown: true
+       setthespawn.spawn.teleport.all: true
+       setthespawn.spawn.teleport.other: true
+       setthespawn.spawn.setup: true
+       setthespawn.sign.create: true
+       setthespawn.sign.break: true
+       setthespawn.sign.use: true
+       setthespawn.countdown.stopall: true
+       setthespawn.sign.use.everybody: true
+       setthespawn.reload: true
+       setthespawn.plugindisable: true
+       setthespawn.help: true
+       setthespawn.cmd.tabcomplete: true
   setthespawn.spawn.use:
     description: Allows a player to use /spawn command.
     default: true
-  setthespawn.help:
-    description: Help commands for SetTheSpawn.
-    default: false
-  setthespawn.reload:
-    description: Reload the config files.
-    default: op
-  setthespawn.plugindisable:
-    description: Allow to player to disable plugin.
-    default: op
-  setthespawn.cmd.tabcomplete:
-    description: You can use [TAB] in commands.
-    default: false
   setthespawn.setspawn:
     description: Allows a player to use /setspawn command.
     default: false
@@ -70,4 +77,16 @@ permissions:
     default: false
   setthespawn.sign.use.everybody:
     description: Allows a player to use in sign everybody line to teleport all online players.
+    default: false
+  setthespawn.help:
+    description: Help commands for SetTheSpawn.
+    default: false
+  setthespawn.reload:
+    description: Reload the config files.
+    default: op
+  setthespawn.plugindisable:
+    description: Allow to player to disable plugin.
+    default: op
+  setthespawn.cmd.tabcomplete:
+    description: You can use [TAB] in commands.
     default: false
