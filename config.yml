@@ -15,6 +15,7 @@
 # http://minecraft.gamepedia.com/Formatting_codes                        #
 # - In case of an error, write here:                                     #
 # https://github.com/montlikadani/SetTheSpawn/issues                     #
+# - If the string is empty does not send the message.                    #
 #=================================OOO====================================#
 
 #=========================================#
@@ -52,19 +53,30 @@ teleport-to-world-spawn-if-spawn-not-found: true
 # This only sign & command work. (If everybody teleport)
 teleport-op-players: false
 
+# You teleported to the spawn, how many seconds to protect you from damage?
+# Set 0 to disable.
+no-damage-time: 0
+
+# Message when the sender was teleported the target player to the spawn.
 # Use %sender%, %newline%, %prefix% placeholder.
 other-player-teleported: '&e%sender%&a teleported you to spawn.'
-other-player-teleported-enable-message: false
 
 # Is it a spawn setting in separate worlds?
 # This is typical for each function!
-# If true, you will write to the spawns.yml file in the world where the player is currently in (setup).
+# If true, it will write to the spawns.yml file in the world where the player is currently in (setup).
 # If it is false, it will write to the spawns.yml file, the world name for the coordinates, and so on.
 per-world-spawn: false
 
 # In which worlds can spawn not be set?
-# If you do not want one of them, use it like this: disabled-worlds: []
 disabled-worlds: []
+
+# Disable spawn command in pvp.
+disable-spawn-in-pvp:
+  enable: false
+  # Command disabling time in seconds.
+  time: 5
+  # Message when you attack a player or attack you.
+  message: '&cNow you can not teleport to spawn because you''re still fighting with a player.'
 
 # Check if the player is flying mode?
 # If it is true, it will cancel the teleport delay.
@@ -101,30 +113,54 @@ cancel-teleport:
   # Player was moved.
   move:
     enable: true
-    enable-message: true
-    teleport-cancelled: '&cCountdown cancelled, you can''t move!'
+    # Message when the player moved.
+    teleport-canceled: '&cTeleport cancelled, you can''t move!'
     # If true when the player moves, the teleport delay will cancel.
     # If false when the player moves, the teleport delay does NOT cancel it.
     enable-permission: true
     permission: 'setthespawn.bypass.movement'
+    # If the player moved during teleporting, would the player pay for it or not?
+    pay-if-moved:
+      enable: false
+      cost: 0.20
+      enable-permission: true
+      permission: 'setthespawn.bypass.spawn.movedcost'
+      # Use %cost% placeholder.
+      no-money: '&cYou do not have enough money to move during teleport.&e Cost:&a $%cost%'
   # Player was jump.
   jump:
     enable: true
-    enable-message: true
-    teleport-cancelled: '&cCountdown cancelled, you can''t jump!'
+    # Message when the player jumped.
+    teleport-canceled: '&cTeleport cancelled, you can''t jump!'
     # If true when the player jump, the teleport delay will cancel.
     # If false when the player jump, the teleport delay does NOT cancel it.
     enable-permission: true
     permission: 'setthespawn.bypass.jump'
+    # If the player jumped during teleporting, would the player pay for it or not?
+    pay-if-jumped:
+      enable: false
+      cost: 0.15
+      enable-permission: true
+      permission: 'setthespawn.bypass.spawn.jumpedcost'
+      # Use %cost% placeholder.
+      no-money: '&cYou do not have enough money to jump in teleport.&e Cost:&a $%cost%'
   # When the player is attacked.
   damage:
     enable: true
-    enable-message: true
-    teleport-cancelled: '&cCountdown cancelled, you are in combat!'
+    # Message when the other player attacked.
+    teleport-canceled: '&cTeleport cancelled, you are in combat!'
     # If true when the player is attacked, the teleport delay will cancel.
     # If false when the player is attacked, the teleport delay does NOT cancel it.
     enable-permission: true
     permission: 'setthespawn.bypass.damage'
+    # If the player damage during teleporting, would the player pay for it or not?
+    pay-if-damage:
+      enable: false
+      cost: 0.5
+      enable-permission: true
+      permission: 'setthespawn.bypass.spawn.damagecost'
+      # Use %cost% placeholder.
+      no-money: '&cYou do not have enough money for the teleport damage.&e Cost:&a $%cost%'
 
 # When a player is being teleported, will plays an effect?
 teleport-effect:
@@ -144,6 +180,23 @@ teleport-sound:
   sound: ENDERMAN_TELEPORT
   volume: 10
   pitch: 1
+
+# Launch firework when the player teleported to the spawn.
+launch-firework:
+  enable: false
+  # If true, the features below do not apply to it.
+  random: true
+  flicker: true
+  trail: true
+  # All firework types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/FireworkEffect.Type.html
+  type: STAR
+  # Colors 0 - 255
+  colors:
+  - 229,0,0
+  - 0,80,0
+  - 0,0,103
+  # The power to launch the firework.
+  power: 1
 
 # Send title if:
 title:
@@ -220,8 +273,8 @@ void-on-spawn:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
     effect: ENDER_SIGNAL
     duration: 15
-  message-enable: false
-  message: '&a&lTeleporting to spawn...'
+  # Message when the player has void fall and teleported to spawn.
+  message: ''
 
 # Teleport on command.
 teleport-on-command:
@@ -302,52 +355,50 @@ spawn-sign:
     # All particle effects: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
     type: EXPLOSION_LARGE
     duration: 5
-  # Enable the message when a player created a spawn sign?
-  sign-create-enable-message: false
+  # Message when a player created a spawn sign.
   sign-created: '%prefix%&a The spawn sign was successfully created!'
   # What color should the [Spawn] first line be?
   # IMPORTANT! Colors in BIG letters!
   sign-color-line0: BLUE
-  # Enables the message when the player has broken the spawn sign.
-  sign-break-msg-enable: false
+  # Message when the player has broken the spawn sign.
   sign-break-msg: '&cYou broke the spawn sign!'
 
+# Enable the gui setup?
+# Requires the server restart when this enabled!
+enable-gui: false
 # How many rows should the GUI have?
 gui-rows: 1
-
 # What should the name of the GUI be?
 gui-name: '&5Spawn settings'
-
-# Enable this message when the player has opened the gui?
-gui-message-enable: true
+# Message when the player has opened the gui.
 gui-open-message: '&aYou opened the spawn settings.'
-
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
 # How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
+# WARNING! The numbers must be in ascending order.
 items:
   slot-0:
     item-id: 345
     name: '&3Setspawn'
     lore:
-      line-0: '&7------------'
-      line-1: '&aSet spawn command.'
-      line-2: '&7------------'
+      - '&7------------'
+      - '&aSet spawn command.'
+      - '&7------------'
     command: setspawn
   slot-1:
     item-id: 368
     name: '&6Teleport'
     lore:
-      line-0: '&7------------'
-      line-1: '&aTeleport to the spawn.'
-      line-2: '&7------------'
+      - '&7------------'
+      - '&aTeleport to the spawn.'
+      - '&7------------'
     command: spawn
   slot-2:
     item-id: 352
     name: '&4Delete spawn'
     lore:
-      line-0: '&7------------'
-      line-1: '&5Delete spawn location.'
-      line-2: '&7------------'
+      - '&7------------'
+      - '&5Delete spawn location.'
+      - '&7------------'
     command: delspawn
 
 #=========================================#
@@ -370,9 +421,7 @@ log-to-file: true
 
 # Plugin enable/disable messages in console.
 # Use %prefix%, %newline% placeholder.
-plugin-enable-message: true
 plugin-enable: '%prefix%&a The plugin successfully enabled&6 v${version}&a!'
-plugin-disable-message: true
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
 # The default is allowed to see the plugin information.
@@ -387,4 +436,4 @@ unknown-command-enable: true
 unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
 
 # DO NOT CHANGE THIS!
-config-version: 1
+config-version: 2

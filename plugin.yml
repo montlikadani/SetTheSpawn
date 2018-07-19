@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.7
+version: 1.8
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -38,6 +38,7 @@ permissions:
        setthespawn.sign.use: true
        setthespawn.countdown.stopall: true
        setthespawn.sign.use.everybody: true
+       setthespawn.bypass.blockspawninpvp: true
        setthespawn.reload: true
        setthespawn.plugindisable: true
        setthespawn.help: true
@@ -77,6 +78,9 @@ permissions:
     default: false
   setthespawn.sign.use.everybody:
     description: Allows a player to use in sign everybody line to teleport all online players.
+    default: false
+  setthespawn.bypass.blockspawninpvp:
+    description: Bypass block spawn command in pvp.
     default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.

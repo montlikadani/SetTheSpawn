@@ -1,3 +1,20 @@
+# v1.8
+Added:
+    Added launch firework functions.
+    Added paying functions to move, jump & damage.
+    Added enable-gui boolean to configuration. - To enable/disable the gui.
+    Added disable spawn command in pvp functions. - To disable spawn command when you attack a player or attack you.
+    Added no-damage-time interval. - When you were teleported to the spawn, there is no damage to anything.
+Fixes:
+    Fixed when the player attacked other player and started spawn, canceled the spawn task.
+    Fixed if teleport cooldown is 0, it will send the message, but it should not have (again).
+    Fixed if teleport cooldown is 0, not teleport to the spawn with sign.
+    Fixed NullPointerException of sign creating message.
+Removed:
+    Removed enable-message booleans. If the message is empty not send the message.
+Other:
+    Now the lore of the gui is string list. Easier :)
+
 # v1.7
 Added:
     Added support for setthespawn.* permission. - To access for all permissions.
