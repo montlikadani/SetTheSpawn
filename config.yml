@@ -13,7 +13,7 @@
 # [Tips]                                                                 #
 # - Use color coding '&' character, on this page:                        #
 # http://minecraft.gamepedia.com/Formatting_codes                        #
-# - In case of an error, write here:                                     #
+# - If you find a bug, send here:                                        #
 # https://github.com/montlikadani/SetTheSpawn/issues                     #
 # - If the string is empty does not send the message.                    #
 #=================================OOO====================================#
@@ -28,14 +28,14 @@ vault: false
 # If 0 you do not have to wait.
 teleport-delay: 0 # In seconds!
 
-# Progress bar.
+# Teleport progress bar.
 progress-bar:
   enable: false
   # Progress bar size.
   bar-size: 30.0
-  # Bar update fast. (In ticks!)
+  # Bar update fast in ticks.
   fast: 2
-  # Teleport display mark.
+  # Teleport progress display mark.
   mark: '|'
   # When the teleport is ready.
   done-color: '&a&l'
@@ -57,7 +57,7 @@ teleport-op-players: false
 # Set 0 to disable.
 no-damage-time: 0
 
-# Message when the sender was teleported the target player to the spawn.
+# Message when other player was teleported the target player to the spawn.
 # Use %sender%, %newline%, %prefix% placeholder.
 other-player-teleported: '&e%sender%&a teleported you to spawn.'
 
@@ -176,7 +176,7 @@ teleport-sound:
   # All sounds:
   # 1.7.x: https://jd.bukkit.org/org/bukkit/Sound.html
   # 1.8.x: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
-  # 1.9.x, 1.10.x, 1.11.x, 1.12.x: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # 1.9.x - 1.13.x: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
   sound: ENDERMAN_TELEPORT
   volume: 10
   pitch: 1
@@ -374,26 +374,57 @@ gui-name: '&5Spawn settings'
 gui-open-message: '&aYou opened the spawn settings.'
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
 # How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
-# WARNING! The numbers must be in ascending order.
+# Slot starts at 0 and end at 53 for a size 54 inventory.
 items:
   slot-0:
-    item-id: 345
+    item: AIR
+    durability: 0
+    name: ''
+    lore:
+      - ''
+    command: ''
+  slot-1:
+    item: AIR
+    durability: 0
+    name: ''
+    lore:
+      - ''
+    command: ''
+  slot-2:
+    item: SIGN
+    durability: 0
     name: '&3Setspawn'
     lore:
       - '&7------------'
       - '&aSet spawn command.'
       - '&7------------'
     command: setspawn
-  slot-1:
-    item-id: 368
+  slot-3:
+    item: AIR
+    durability: 0
+    name: ''
+    lore:
+      - ''
+    command: ''
+  slot-4:
+    item: ENDER_PEARL
+    durability: 0
     name: '&6Teleport'
     lore:
       - '&7------------'
       - '&aTeleport to the spawn.'
       - '&7------------'
     command: spawn
-  slot-2:
-    item-id: 352
+  slot-5:
+    item: AIR
+    durability: 0
+    name: ''
+    lore:
+      - ''
+    command: ''
+  slot-6:
+    item: BONE
+    durability: 0
     name: '&4Delete spawn'
     lore:
       - '&7------------'
@@ -428,12 +459,5 @@ plugin-disable: '%prefix%&c The plugin successfully disabled!'
 # Permission: setthespawn.plugininfo
 default-can-see-plugin-information: false
 
-# Unknown-command - If more than one word/letter you write to it.
-# Example: /sts reload something...
-# Use %command% placeholder.
-# This feature is NOT enter into the unknown command Minecraft, it's just your own.
-unknown-command-enable: true
-unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
-
 # DO NOT CHANGE THIS!
-config-version: 2
+config-version: 3

@@ -1,3 +1,19 @@
+# v1.9
+Added:
+    Added durability integer of gui. (Not supported the : mark.)
+    Added /sts bukkitspawn command. - To teleport to the default world spawn location.
+Fixes:
+    Improved teleport & progress bar cooldown problems. - There were problems with stopping the scheduler when the player moved and started teleporting again.
+    Fixed NullPointerException of registering cooldown task.
+Other:
+    Updated to Bukkit/Spigot 1.13 version.
+    Now if you want add empty place in GUI you can use AIR in item section.
+    Now if a player rides on a horse or pig and teleports to the spawn, then the entity remains.
+Changed:
+    Changed the item-id to item since 1.13 already takes issue id in the GUI.
+Removed:
+    Removed plugin update permission.
+
 # v1.8
 Added:
     Added launch firework functions.

@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.8
+version: 1.9
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault]
@@ -39,6 +39,8 @@ permissions:
        setthespawn.countdown.stopall: true
        setthespawn.sign.use.everybody: true
        setthespawn.bypass.blockspawninpvp: true
+       setthespawn.bukkitspawn: true
+       setthespawn.bukkitspawn.other: true
        setthespawn.reload: true
        setthespawn.plugindisable: true
        setthespawn.help: true
@@ -81,6 +83,12 @@ permissions:
     default: false
   setthespawn.bypass.blockspawninpvp:
     description: Bypass block spawn command in pvp.
+    default: false
+  setthespawn.bukkitspawn:
+    description: Allows to the player to use /sts bukkitspawn command.
+    default: false
+  setthespawn.bukkitspawn.other:
+    description: Allows to the player to use /sts bukkitspawn <player> command.
     default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.

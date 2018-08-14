@@ -31,6 +31,7 @@ no-permission-to-break-sign: '&cNo permission to break the spawn sign!&7 (%perm%
 no-permission-to-use-sign: '&cNo permission to use the spawn sign!&7 (%perm%)'
 
 # Use %command% placeholder.
+unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
 no-console: '%prefix%&c This command "&7/%command%&c" can only be used by players.'
 
 # Use %args% placeholder.
@@ -48,6 +49,11 @@ world-spawn:
 # Use %player% placeholder.
 player-not-online: '&cThis player&e %player%&c is not online.'
 teleport-other-spawn: '&2You teleported&5 %player%&2 player to spawn!'
+bukkit-spawn-teleport:
+  console-usage: '%prefix%&c Use: "&7/%command% bukkitspawn <player>&c".'
+  teleported: '&aYou have been successfully teleported to bukkit spawn.'
+  player-not-found: '&cThis player&7 %player%&c not found.'
+  target-teleported: '&aYou have successfully teleported&e %player%&a to spawn.'
 
 # Use %seconds% placeholder.
 teleport-wait-msg: '&6Teleporting in&c %seconds%&6 seconds...&4 Don''t move!'
@@ -73,10 +79,11 @@ chat-messages:
 - '&8/&a%command% help&5 -&6 Help commands.'
 - '&8/&a%command% setup&5 -&6 Open the gui setup.'
 - '&8/&a%command% stopalltask&5 -&6 Stop all current teleport task.'
+- '&8/&a%command% bukkitspawn&9 [player]&5 -&6 Teleport the player to the bukkit spawn.'
 - '&8/&asetspawn&5 -&6 Set the spawn location.'
 - '&8/&adeletespawn&3 (or delspawn)&5 -&6 Delete the spawn location.'
 - '&8/&aspawn&9 [player&2;&9all]&5 -&6 Teleport to the spawn location.'
 - '&e&m-----------------------------------------'
 
 # DO NOT CHANGE THIS!
-config-version: 1
+config-version: 2
