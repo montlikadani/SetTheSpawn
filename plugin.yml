@@ -41,6 +41,7 @@ permissions:
        setthespawn.bypass.blockspawninpvp: true
        setthespawn.bukkitspawn: true
        setthespawn.bukkitspawn.other: true
+       setthespawn.importessspawn: true
        setthespawn.reload: true
        setthespawn.plugindisable: true
        setthespawn.help: true
