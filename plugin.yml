@@ -1,9 +1,9 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 1.9
+version: 2.0
 author: montlikadani
 description: Set the spawn at the location.
-softdepend: [Vault]
+softdepend: [Vault, Essentials]
 # DO NOT EDIT ANYTHING ABOVE THIS LINE!
 
 commands:
@@ -89,6 +89,9 @@ permissions:
     default: false
   setthespawn.bukkitspawn.other:
     description: Allows to the player to use /sts bukkitspawn <player> command.
+    default: false
+  setthespawn.importessspawn:
+    description: Allows to the player to use /sts importessspawn [group] command.
     default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.

@@ -26,6 +26,7 @@ public class Permissions {
 	public static final Permission BYPASSPVP = new Permission("setthespawn.bypass.blockspawninpvp");
 	public static final Permission BUKKITSPAWN = new Permission("setthespawn.bukkitspawn");
 	public static final Permission BUKKITSPAWNOTHER = new Permission("setthespawn.bukkitspawn.other");
+	public static final Permission IMPORTESSSPAWN = new Permission("setthespawn.importessspawn");
 
 	public static final Permission SPAWNCOST = new Permission(plugin.getConfig().getString("spawn-cost.permission"));
 	public static final Permission SPAWNSIGNCOST = new Permission(plugin.getConfig().getString("spawn-cost.sign.permission"));

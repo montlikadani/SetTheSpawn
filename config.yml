@@ -53,7 +53,7 @@ teleport-to-world-spawn-if-spawn-not-found: true
 # This only sign & command work. (If everybody teleport)
 teleport-op-players: false
 
-# You teleported to the spawn, how many seconds to protect you from damage?
+# A player teleported to the spawn, how many seconds to protect the player from damage?
 # Set 0 to disable.
 no-damage-time: 0
 
@@ -66,6 +66,10 @@ other-player-teleported: '&e%sender%&a teleported you to spawn.'
 # If true, it will write to the spawns.yml file in the world where the player is currently in (setup).
 # If it is false, it will write to the spawns.yml file, the world name for the coordinates, and so on.
 per-world-spawn: false
+
+# Teleport to the set player bed spawn. If the player bed spawn not found, teleports to the spawn is default.
+# The bed location not manage by the plugin!
+teleport-to-bed-spawn: false
 
 # In which worlds can spawn not be set?
 disabled-worlds: []
@@ -364,7 +368,6 @@ spawn-sign:
   sign-break-msg: '&cYou broke the spawn sign!'
 
 # Enable the gui setup?
-# Requires the server restart when this enabled!
 enable-gui: false
 # How many rows should the GUI have?
 gui-rows: 1
@@ -372,23 +375,17 @@ gui-rows: 1
 gui-name: '&5Spawn settings'
 # Message when the player has opened the gui.
 gui-open-message: '&aYou opened the spawn settings.'
+# Close the GUI when a player clicks on an item?
+close-gui-when-player-clicked-on-a-item: true
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
 # How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
 # Slot starts at 0 and end at 53 for a size 54 inventory.
 items:
   slot-0:
     item: AIR
-    durability: 0
-    name: ''
-    lore:
-      - ''
     command: ''
   slot-1:
     item: AIR
-    durability: 0
-    name: ''
-    lore:
-      - ''
     command: ''
   slot-2:
     item: SIGN
@@ -401,10 +398,6 @@ items:
     command: setspawn
   slot-3:
     item: AIR
-    durability: 0
-    name: ''
-    lore:
-      - ''
     command: ''
   slot-4:
     item: ENDER_PEARL
@@ -417,10 +410,6 @@ items:
     command: spawn
   slot-5:
     item: AIR
-    durability: 0
-    name: ''
-    lore:
-      - ''
     command: ''
   slot-6:
     item: BONE
@@ -460,4 +449,4 @@ plugin-disable: '%prefix%&c The plugin successfully disabled!'
 default-can-see-plugin-information: false
 
 # DO NOT CHANGE THIS!
-config-version: 3
+config-version: 4

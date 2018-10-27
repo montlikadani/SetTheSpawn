@@ -1,3 +1,13 @@
+# v2.0
+Added:
+    Added close-gui-when-player-clicked-on-a-item boolean to configuration.
+    Added teleport to bed spawn function. - To teleport the player to the player's bed spawn point.
+    Added /sts importessentialsspawn [group] command. - To import Essentials spawn to the plugin.
+Removed:
+    Removed unnecessary information about the player & world (uuid).
+Other:
+    Now if a player rides on a skeletonhorse, zombiehorse or llama and teleports to the spawn, then the entity remains.
+
 # v1.9
 Added:
     Added durability integer of gui. (Not supported the : mark.)
