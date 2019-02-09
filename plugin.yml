@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 2.0
+version: 2.1
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
@@ -42,10 +42,13 @@ permissions:
        setthespawn.bukkitspawn: true
        setthespawn.bukkitspawn.other: true
        setthespawn.importessspawn: true
+       setthespawn.togglespawn: true
+       setthespawn.togglespawn.bypass: true
+       setthespawn.bypass.fly: true
+       setthespawn.bypass.sneak: true
        setthespawn.reload: true
-       setthespawn.plugindisable: true
+       setthespawn.disable: true
        setthespawn.help: true
-       setthespawn.cmd.tabcomplete: true
   setthespawn.spawn.use:
     description: Allows a player to use /spawn command.
     default: true
@@ -94,15 +97,24 @@ permissions:
   setthespawn.importessspawn:
     description: Allows to the player to use /sts importessspawn [group] command.
     default: false
+  setthespawn.togglespawn:
+    description: Allows to the player to use /sts togglespawn command.
+    default: false
+  setthespawn.togglespawn.bypass:
+    description: Bypass the togglespawn when the spawn has locked with command.
+    default: false
+  setthespawn.bypass.fly:
+    description: Bypass the flight when a player want teleport to spawn when flying.
+    default: false
+  setthespawn.bypass.sneak:
+    description: Bypass the sneak mode when a player want teleport to spawn when sneak.
+    default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.
     default: false
   setthespawn.reload:
     description: Reload the config files.
-    default: op
-  setthespawn.plugindisable:
+    default: false
+  setthespawn.disable:
     description: Allow to player to disable plugin.
     default: op
-  setthespawn.cmd.tabcomplete:
-    description: You can use [TAB] in commands.
-    default: false

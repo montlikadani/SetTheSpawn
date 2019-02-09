@@ -1,3 +1,19 @@
+# v2.1
+Added:
+    Added optional option to set the spawn cost in spawns file. (/setspawn [cost])
+    Added /sts togglespawn command to turn on/off the /spawn command use.
+    Added configurable sounds to player moved, damaged & jump.
+    Added bypass permission for sneak & fly when the player teleports and press sneak or starts flight, and cancel task.
+    Added spawn-sign.save-sign-data boolean to configuration. - Now saving the signs data to a file when a player placed a sign.
+Fixes:
+     A lot of NPE fixes that caused the plugin stop.
+     Fix NPE when player died and the respawn function enabled but when spawn not found throws a long error.
+     Fixed tab-complete not work correctly.
+Other:
+    Moved some messages from config.yml to messages.yml file.
+    Changed the teleport-on-command for simpler. (starts with player or console)
+    Now if any string is empty or not found, it will not send a blank message.
+
 # v2.0
 Added:
     Added close-gui-when-player-clicked-on-a-item boolean to configuration.

@@ -1,101 +1,104 @@
-#=========================================#
-#                Messages                 #
-#=========================================#
-# Default language: 'EN' - English.
-# That is the apostrophe ('') inside them you can feel free to edit.
-prefix: '&6&l[&9&lSet&2&lThe&4&lSpawn&6&l]&7&l >'
+prefix: "&6&l[&9&lSet&2&lThe&4&lSpawn&6&l]&7&l >"
 
 # Use %prefix%, %newline% placeholder.
-teleport-wait: '&cPlease wait while the teleport delay and teleportation will be successful.'
-spawn-teleport-success: '&6Teleporting...'
-error-spawn-not-set: '%prefix%&4 ERROR:&c The spawn location has NOT been set! Type "&7/setspawn&c" to set spawn position.'
-spawn-deleted: '%prefix%&c The spawn successfully deleted.'
-spawn-already-deleted: '%prefix%&c The spawn already deleted.'
-no-spawn: '&cThe spawn has not yet been set.'
-spawn-no-console: '%prefix%&c Use: "&7/spawn <player;all>&c".'
-all-teleport-delay-cancelled: '&4WARNING!&c All teleports in progress are canceled.'
-all-teleport-successfully-cancelled: '%prefix%&a You''ve successfully stopped all ongoing teleports.'
-no-started-tp: '%prefix%&c Nobody started a teleportation so it was not possible to stop the delay.'
-reload-config: '%prefix%&a The plugin successfully reloaded!'
-no-players-who-teleport: '&cNo one you can teleport.'
-all-player-teleport-success-with-sign: '&2Everyone was teleported to the spawn.'
-op-players-not-teleport: '&cOp players can not be teleport to spawn.'
-bed-spawn-teleport-success: '&aTeleporting to your bed spawn point...'
+teleport-wait: "&cPlease wait while the teleport delay and teleportation will be successful."
+spawn-teleport-success: "&6Teleporting..."
+error-spawn-not-set: "%prefix%&4 ERROR:&c The spawn location has NOT been set! Type '&7/setspawn&c' to set spawn position."
+spawn-deleted: "%prefix%&c The spawn successfully deleted."
+spawn-already-deleted: "%prefix%&c The spawn already deleted."
+no-spawn: "&cThe spawn has not yet been set."
+spawn-no-console: "%prefix%&c Use: '&7/spawn <player/all>&c'."
+all-teleport-delay-cancelled: "&4WARNING!&c All teleports in progress are canceled."
+all-teleport-successfully-cancelled: "%prefix%&a You've successfully stopped all ongoing teleports."
+no-started-tp: "%prefix%&c Nobody started a teleportation so it was not possible to stop the delay."
+reload-config: "%prefix%&a The plugin successfully reloaded!"
+no-players-who-teleport: "&cNo one you can teleport."
+all-player-teleport-success-with-sign: "&2Everyone was teleported to the spawn."
+op-players-not-teleport: "&cOp players can not be teleport to spawn."
+bed-spawn-teleport-success: "&aTeleporting to your bed spawn point..."
+gui-open-message: "&aYou opened the spawn settings."
+setup-no-console: "%prefix%&c This command '&7/%command% setup&c' can only be used by players."
+not-a-number: "&e%number%&c is not a number."
+spawn-sign:
+  sign-created: "%prefix%&a The spawn sign was successfully created!"
+  sign-break-msg: "&cYou broke the spawn sign!"
 import-essentials-spawn:
-  delete-old-file: '&2Deleting old spawn location...'
-  importing: '&2Importing Essentials spawn location...&7 Messages in the console.'
-  import-success: '&aImporting success!'
-  import-not-succeed: '&cImporting is not succeed.'
-  essentials-not-enabled: '&cThe Essentials & EssentialsSpawn plugin is not enabled. Please enable to use this function.'
+  delete-old-file: "&2Deleting old spawn location..."
+  importing: "&2Importing Essentials spawn location...&7 Messages in the console."
+  import-success: "&aImporting success!"
+  import-not-succeed: "&cImporting is not succeed."
+  essentials-not-enabled: "&cThe Essentials & EssentialsSpawn plugin is not enabled. Please enable to use this function."
+toggle-spawn:
+  spawn-use-toggled-off: "%prefix%&c The spawn successfully locked."
+  spawn-use-toggled-on: "%prefix%&a The spawn successfully unlocked."
+  spawn-locked: "&cThe spawn is currently locked, so you can not use. Please try it later."
 
 # Use %subcmd% placeholder.
-unknown-sub-command: '%prefix%&c Unknown sub-command&7 %subcmd%&c.'
+unknown-sub-command: "%prefix%&c Unknown sub-command&7 %subcmd%&c."
 
 # Use %perm% placeholder.
-no-permission: '&cYou don''t have permission for that!&7 (%perm%)'
-no-permission-to-create-spawn-sign: '&cYou do not have permission to create a spawn sign!&7 (%perm%)'
-no-permission-to-break-sign: '&cNo permission to break the spawn sign!&7 (%perm%)'
-no-permission-to-use-sign: '&cNo permission to use the spawn sign!&7 (%perm%)'
+no-permission: "&cYou don't have permission for that!&7 (%perm%)"
+no-permission-to-create-spawn-sign: "&cYou do not have permission to create a spawn sign!&7 (%perm%)"
+no-permission-to-break-sign: "&cNo permission to break the spawn sign!&7 (%perm%)"
+no-permission-to-use-sign: "&cNo permission to use the spawn sign!&7 (%perm%)"
 
 # Use %command% placeholder.
-unknown-command: '%prefix%&c Unknown command.&7 Type "&f/%command% help&7" for help.'
-no-console: '%prefix%&c This command "&7/%command%&c" can only be used by players.'
-
-# Use %args% placeholder.
-setup-no-console: '%prefix%&c This command "&7/%command% %args%&c" can only be used by players.'
+unknown-command: "%prefix%&c Unknown command.&7 Type '&f/%command% help&7' for help."
+no-console: "%prefix%&c This command '&7/%command%&c' can only be used by players."
 
 # Use %world% placeholder.
-spawn-successfully-set: '%prefix%&a The spawn successfully set in world:&b %world%&a.'
-world-not-allowed: '&cIn this world&7 %world%&c is not allowed to set spawn!'
+spawn-successfully-set: "%prefix%&a The spawn successfully set in world:&b %world%&a."
+world-not-allowed: "&cIn this world&7 %world%&c is not allowed to set spawn!"
 world-spawn:
-  successfully-set: '%prefix%&a The&c %world%&a world spawn successfully set.'
-  already-deleted: '%prefix%&c The&7 %world%&c world spawn already deleted.'
-  spawn-deleted: '%prefix%&c The&8 %world%&c world spawn successfully deleted.'
-  teleport-success: '&6Teleporting to&5 %world%&6...'
+  successfully-set: "%prefix%&a The&c %world%&a world spawn successfully set."
+  already-deleted: "%prefix%&c The&7 %world%&c world spawn already deleted."
+  spawn-deleted: "%prefix%&c The&8 %world%&c world spawn successfully deleted."
+  teleport-success: "&6Teleporting to&5 %world%&6..."
 
 # Use %player% placeholder.
-player-not-online: '&cThis player&e %player%&c is not online.'
-teleport-other-spawn: '&2You teleported&5 %player%&2 player to spawn!'
+player-not-online: "&cThis player&e %player%&c is not online."
+teleport-other-spawn: "&2You teleported&5 %player%&2 player to spawn!"
 bukkit-spawn-teleport:
-  console-usage: '%prefix%&c Use: "&7/%command% bukkitspawn <player>&c".'
-  teleported: '&aYou have been successfully teleported to bukkit spawn.'
-  player-not-found: '&cThis player&7 %player%&c not found.'
-  target-teleported: '&aYou have successfully teleported&e %player%&a to spawn.'
+  console-usage: "%prefix%&c Use: '&7/%command% bukkitspawn <player>&c'."
+  teleported: "&aYou have been successfully teleported to bukkit spawn."
+  player-not-found: "&cThis player&7 %player%&c not found."
+  target-teleported: "&aYou have successfully teleported&e %player%&a to spawn."
 
 # Use %seconds% placeholder.
-teleport-wait-msg: '&6Teleporting in&c %seconds%&6 seconds...&4 Don''t move!'
+teleport-wait-msg: "&6Teleporting in&c %seconds%&6 seconds...&4 Don't move!"
 
 # Use %cost% placeholder.
-not-enough-money: '&cYou do not have enough money to execute this command.&e Cost:&a $%cost%'
-not-enough-money-sign: '&cYou do not have enough money to use the sign.&e Cost:&a $%cost%'
+not-enough-money: "&cYou do not have enough money to execute this command.&e Cost:&a $%cost%"
+not-enough-money-sign: "&cYou do not have enough money to use the sign.&e Cost:&a $%cost%"
 
 # Use %sender% placeholder.
-teleport-all-players: '&2Everyone was teleported to the spawn by:&c %sender%.'
+teleport-all-players: "&2Everyone was teleported to the spawn by:&c %sender%."
+other-player-teleported: "&e%sender%&a teleported you to spawn."
 
 # This feature lists all the chat panel help.
 chat-messages:
   1:
-  - '&e&m---------&b> &e[&9Set&2The&4Spawn&2 Help&e]&b <&e&m----------'
-  - ''
-  - '&7-&9 []&7 -&9 optional arguments'
-  - '&7-&3 ()&7 -&3 command abbreviations'
-  - '&7-&2 ;&7 -&2 writes more to one place'
-  - ''
-  - '&8/&a%command%&b [+TAB]&5 -&6 Main plugin info.'
-  - '&8/&a%command% disable&5 -&6 Disable the plugin.'
-  - '&8/&a%command% reload&3 (or rl)&5 -&6 Reload the plugin.'
-  - '&8/&a%command% help&9 [2]&5 -&6 Help commands.'
-  - '&8/&a%command% setup&5 -&6 Open the gui setup.'
-  - '&e&m-----------------------------------------'
+  - "&e&m---------&b> &e[&9Set&2The&4Spawn&2 Help&e]&b <&e&m----------"
+  - ""
+  - "&7-&9 []&7 -&9 optional arguments"
+  - "&7-&3 ()&7 -&3 command abbreviations"
+  - ""
+  - "&8/&a%command%&b [+TAB]&5 -&6 Main plugin info."
+  - "&8/&a%command% disable&5 -&6 Disable the plugin."
+  - "&8/&a%command% reload&3 (or rl)&5 -&6 Reload the plugin."
+  - "&8/&a%command% help&9 [2]&5 -&6 Help commands."
+  - "&8/&a%command% setup&5 -&6 Open the gui setup."
+  - "&8/&a%command% togglespawn&5 -&6 Toggle on/off the spawn use for other players."
+  - "&e&m-----------------------------------------"
   2:
-  - '&e&m---------&b> &e[&9Set&2The&4Spawn&2 Help&c 2&e]&b <&e&m----------'
-  - '&8/&a%command% stopalltask&5 -&6 Stop all current teleport task.'
-  - '&8/&a%command% bukkitspawn&9 [player]&5 -&6 Teleport the player to the bukkit spawn.'
-  - '&8/&asetspawn&5 -&6 Set the spawn location.'
-  - '&8/&adeletespawn&3 (or delspawn)&5 -&6 Delete the spawn location.'
-  - '&8/&aspawn&9 [player&2;&9all]&5 -&6 Teleport to the spawn location.'
-  - '&8/&a%command% importessentialsspawn&3 (or importessspawn)&9 [group]&5 -&6 Imports the Essentials spawn to the plugin.'
-  - '&e&m-----------------------------------------'
+  - "&e&m---------&b> &e[&9Set&2The&4Spawn&2 Help&c 2&e]&b <&e&m----------"
+  - "&8/&a%command% stopalltask&5 -&6 Stop all current teleport task."
+  - "&8/&a%command% bukkitspawn&9 [player]&5 -&6 Teleport the player to the bukkit spawn."
+  - "&8/&asetspawn&9 [cost]&5 -&6 Set the spawn location."
+  - "&8/&adeletespawn&3 (or delspawn)&5 -&6 Delete the spawn location."
+  - "&8/&aspawn&9 [player&2/&9all]&5 -&6 Teleport to the spawn location."
+  - "&8/&a%command% importessentialsspawn&3 (or importessspawn)&9 [group]&5 -&6 Imports the Essentials spawn to the plugin."
+  - "&e&m-----------------------------------------"
 
 # DO NOT CHANGE THIS!
-config-version: 3
+config-version: 4

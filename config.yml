@@ -18,9 +18,6 @@
 # - If the string is empty does not send the message.                    #
 #=================================OOO====================================#
 
-#=========================================#
-#                Settings                 #
-#=========================================#
 # Use the Vault plugin for the plugin.
 vault: false
 
@@ -36,13 +33,13 @@ progress-bar:
   # Bar update fast in ticks.
   fast: 2
   # Teleport progress display mark.
-  mark: '|'
+  mark: "|"
   # When the teleport is ready.
-  done-color: '&a&l'
+  done-color: "&a&l"
   # When teleport is not ready yet.
-  not-done-color: '&c&l'
+  not-done-color: "&c&l"
   # Use %output%, %time% placeholder.
-  message-format: '&aTeleporting in:&7&l [%output%&7&l]&6 (&8%time%&6)'
+  message-format: "&aTeleporting in:&7&l [%output%&7&l]&6 (&8%time%&6)"
 
 # If the spawn can not be found, teleport it to the world spawn?
 teleport-to-world-spawn-if-spawn-not-found: true
@@ -56,10 +53,6 @@ teleport-op-players: false
 # A player teleported to the spawn, how many seconds to protect the player from damage?
 # Set 0 to disable.
 no-damage-time: 0
-
-# Message when other player was teleported the target player to the spawn.
-# Use %sender%, %newline%, %prefix% placeholder.
-other-player-teleported: '&e%sender%&a teleported you to spawn.'
 
 # Is it a spawn setting in separate worlds?
 # This is typical for each function!
@@ -80,28 +73,31 @@ disable-spawn-in-pvp:
   # Command disabling time in seconds.
   time: 5
   # Message when you attack a player or attack you.
-  message: '&cNow you can not teleport to spawn because you''re still fighting with a player.'
+  message: "&cNow you can not teleport to spawn because you're still fighting with a player."
 
 # Check if the player is flying mode?
 # If it is true, it will cancel the teleport delay.
 # If it is false, you can teleport in flight too.
+# This ignores with setthespawn.bypass.fly permission.
 check-fly-before-teleport:
   enable: false
-  message: '&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!'
+  message: "&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!"
 
 # When a player presses the SHIFT button while teleporting, and sits in snake mode, will it cancel teleportation?
+# This ignore with setthespawn.bypass.sneak permission.
 check-sneak-while-teleport:
   enable: false
-  message: '&cTeleporting is canceled because snake mode is enabled.'
+  message: "&cTeleporting is canceled because snake mode is enabled."
 
 # Cost /spawn command or sign usage.
 # This requires a Vault plugin.
 spawn-cost:
   enable: false
   enable-permission: true
-  # If this is specified at the rank, they can use the /spawn command without payment.
+  # If this is specified at the group, they can use the /spawn command without payment.
   # If not specified, the /spawn command must be paid.
-  permission: 'setthespawn.bypass.spawncost'
+  permission: setthespawn.bypass.spawncost
+  # This can be set as per-spawn when setting the spawn point.
   cost: 3.0
   # Sign usage price. (Same as /spawn command.)
   sign:
@@ -109,62 +105,80 @@ spawn-cost:
     enable-permission: true
     # If this is specified at the rank, they can use the spawn sign without payment.
     # If not specified, the spawn sign usage must be paid.
-    permission: 'setthespawn.bypass.signcost'
+    permission: setthespawn.bypass.signcost
     cost: 2.0
 
 # Cancel teleport if:
 cancel-teleport:
-  # Player was moved.
+  # Player was moved while teleporting.
   move:
     enable: true
     # Message when the player moved.
-    teleport-canceled: '&cTeleport cancelled, you can''t move!'
+    teleport-canceled: "&cTeleport cancelled, you can't move!"
     # If true when the player moves, the teleport delay will cancel.
     # If false when the player moves, the teleport delay does NOT cancel it.
     enable-permission: true
-    permission: 'setthespawn.bypass.movement'
+    permission: setthespawn.bypass.movement
+    # Play sound when a player moved while teleporting.
+    play-sound:
+      enable: false
+      type: BLOCK_ENDER_CHEST_CLOSE
+      volume: 8
+      pitch: 1
     # If the player moved during teleporting, would the player pay for it or not?
     pay-if-moved:
       enable: false
       cost: 0.20
       enable-permission: true
-      permission: 'setthespawn.bypass.spawn.movedcost'
+      permission: setthespawn.bypass.spawn.movedcost
       # Use %cost% placeholder.
-      no-money: '&cYou do not have enough money to move during teleport.&e Cost:&a $%cost%'
-  # Player was jump.
+      no-money: "&cYou do not have enough money to move during teleport.&e Cost:&a $%cost%"
+  # Player was jump while teleporting.
   jump:
     enable: true
     # Message when the player jumped.
-    teleport-canceled: '&cTeleport cancelled, you can''t jump!'
+    teleport-canceled: "&cTeleport cancelled, you can't jump!"
     # If true when the player jump, the teleport delay will cancel.
     # If false when the player jump, the teleport delay does NOT cancel it.
     enable-permission: true
-    permission: 'setthespawn.bypass.jump'
+    permission: setthespawn.bypass.jump
+    # Play sound when a player jump while teleporting.
+    play-sound:
+      enable: false
+      type: BLOCK_WOODEN_DOOR_CLOSE
+      volume: 8
+      pitch: 1
     # If the player jumped during teleporting, would the player pay for it or not?
     pay-if-jumped:
       enable: false
       cost: 0.15
       enable-permission: true
-      permission: 'setthespawn.bypass.spawn.jumpedcost'
+      permission: setthespawn.bypass.spawn.jumpedcost
       # Use %cost% placeholder.
-      no-money: '&cYou do not have enough money to jump in teleport.&e Cost:&a $%cost%'
-  # When the player is attacked.
+      no-money: "&cYou do not have enough money to jump in teleport.&e Cost:&a $%cost%"
+  # When the player is attacked while teleporting.
   damage:
     enable: true
     # Message when the other player attacked.
-    teleport-canceled: '&cTeleport cancelled, you are in combat!'
+    teleport-canceled: "&cTeleport cancelled, you are in combat!"
     # If true when the player is attacked, the teleport delay will cancel.
     # If false when the player is attacked, the teleport delay does NOT cancel it.
     enable-permission: true
-    permission: 'setthespawn.bypass.damage'
+    permission: setthespawn.bypass.damage
+    # Play sound when a player attacked someone while teleporting.
+    play-sound:
+      enable: false
+      type: BLOCK_LEVER_CLICK
+      volume: 8
+      pitch: 1
     # If the player damage during teleporting, would the player pay for it or not?
     pay-if-damage:
       enable: false
       cost: 0.5
       enable-permission: true
-      permission: 'setthespawn.bypass.spawn.damagecost'
+      permission: setthespawn.bypass.spawn.damagecost
       # Use %cost% placeholder.
-      no-money: '&cYou do not have enough money for the teleport damage.&e Cost:&a $%cost%'
+      no-money: "&cYou do not have enough money for the teleport damage.&e Cost:&a $%cost%"
 
 # When a player is being teleported, will plays an effect?
 teleport-effect:
@@ -208,8 +222,8 @@ title:
   start-spawn:
     enable: false
     # Use %seconds% placeholder.
-    title: '&aTeleporting in'
-    subtitle: '&6%seconds%&a seconds'
+    title: "&aTeleporting in"
+    subtitle: "&6%seconds%&a seconds"
     # The time it takes for the title to fade into the screen. (In ticks)
     fade-in: 10
     # The time it takes for the title to stay on the screen. (In ticks)
@@ -219,8 +233,8 @@ title:
   # This is when the player has teleported to the spawn and displays the title.
   end-spawn:
     enable: false
-    title: '&3Teleport'
-    subtitle: '&asuccess!'
+    title: "&3Teleport"
+    subtitle: "&asuccess!"
     # The time it takes for the title to fade into the screen. (In ticks)
     fade-in: 10
     # The time it takes for the title to stay on the screen. (In ticks)
@@ -230,8 +244,8 @@ title:
   # When a player moves while teleporting.
   player-moved:
     enable: false
-    title: '&cYou moved!'
-    subtitle: '&eTeleport cancelled.'
+    title: "&cYou moved!"
+    subtitle: "&eTeleport cancelled."
     # The time it takes for the title to fade into the screen. (In ticks)
     fade-in: 10
     # The time it takes for the title to stay on the screen. (In ticks)
@@ -241,8 +255,8 @@ title:
   # When a player jump while teleporting.
   player-jump:
     enable: false
-    title: '&cYou jumped!'
-    subtitle: '&eTeleport cancelled.'
+    title: "&cYou jumped!"
+    subtitle: "&eTeleport cancelled."
     # The time it takes for the title to fade into the screen. (In ticks)
     fade-in: 10
     # The time it takes for the title to stay on the screen. (In ticks)
@@ -252,8 +266,8 @@ title:
   # When teleporting player are attacked while teleporting.
   player-damage:
     enable: false
-    title: '&cA player was attacked!'
-    subtitle: '&eTeleport cancelled.'
+    title: "&cA player was attacked!"
+    subtitle: "&eTeleport cancelled."
     # The time it takes for the title to fade into the screen. (In ticks)
     fade-in: 10
     # The time it takes for the title to stay on the screen. (In ticks)
@@ -278,23 +292,18 @@ void-on-spawn:
     effect: ENDER_SIGNAL
     duration: 15
   # Message when the player has void fall and teleported to spawn.
-  message: ''
+  message: ""
 
-# Teleport on command.
+# Teleport on command when the player teleported to spawn.
 teleport-on-command:
-  # Player commands.
+  enable: false
   # Use %player%, %player-displayname%, %world%, %player-gamemode%, %player-health%, %player-max-health% placeholder.
-  player-command:
-    enable: false
-    commands:
-    - 'money'
-    - 'kit'
-  # Console commands.
-  console-command:
-    enable: false
-    commands:
-    - 'eco take %player% 50'
-    - 'money'
+  # Use player & console arguments for first.
+  commands:
+  - "player: money"
+  - "player: kit"
+  - "console: eco take %player% 50"
+  - "console: money"
 
 # Teleport to spawn if:
 spawn-teleport:
@@ -309,6 +318,8 @@ spawn-teleport:
 spawn-sign:
   # Allows you to create and use the spawn sign.
   enable: true
+  # Save signs automatically to a file when you place a sign?
+  save-sign-data: false
   # If the player does not have permission to create a sign.
   no-permission-create-sign:
     # If it is true, it will break the sign.
@@ -317,64 +328,58 @@ spawn-sign:
     # If it is 'enable: true', it writes to the sign.
     setline:
       enable: true
-      line0: '&cYou do not have'
-      line1: '&cpermission'
-      line2: '&cto create'
-      line3: '&ca sign!'
+      lines:
+      - "&cYou do not have"
+      - "&cpermission"
+      - "&cto create"
+      - "&ca sign!"
   # If the spawn is not set up and what to write.
   # Use %text% placeholder.
   no-spawn:
-    line0: '&c[Spawn]'
-    line1: '%text%'
-    line2: '%text%'
-    line3: '%text%'
+  - "&c[Spawn]"
+  - "%text%"
+  - "%text%"
+  - "%text%"
   # If the spawn is set and what to write.
   spawn-created:
-    line0: '%color%[Spawn]' # Use %color% placeholder.
-    line1: '%text%'
-    line2: '%text%'
-    line3: '%text%'
+    lines:
+    - "&9[Spawn]"
+    - "%text%"
+    - "%text%"
+    - "%text%"
+    # Use %all% placeholder.
     everybody:
-      # Use %all% placeholder.
-      line0: '%color%[Spawn]' # Use %color% placeholder.
-      line1: '%all%'
-      line2: '%text%'
-      line3: '%text%'
+    - "&9[Spawn]"
+    - "%all%"
+    - "%text%"
+    - "%text%"
     # If the world spawn is set and what to write.
     per-world:
       # Use %world% placeholder.
-      line0: '%color%[Spawn]' # Use %color% placeholder.
-      line1: '&6%world%'
-      line2: '%text%'
-      line3: '%text%'
+      lines:
+      - "&9[Spawn]"
+      - "&6%world%"
+      - "%text%"
+      - "%text%"
+      # Use %all%, %world% placeholder.
       everybody:
-        # Use %all%, %world% placeholder.
-        line0: '%color%[Spawn]' # Use %color% placeholder.
-        line1: '%all%'
-        line2: '%world%'
-        line3: '%text%'
+      - "&9[Spawn]"
+      - "%all%"
+      - "%world%"
+      - "%text%"
   # Play particle effect when you create a spawn sign?
   play-particle-effect-on-sign-create:
     enable: true
     # All particle effects: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
     type: EXPLOSION_LARGE
     duration: 5
-  # Message when a player created a spawn sign.
-  sign-created: '%prefix%&a The spawn sign was successfully created!'
-  # What color should the [Spawn] first line be?
-  # IMPORTANT! Colors in BIG letters!
-  sign-color-line0: BLUE
-  # Message when the player has broken the spawn sign.
-  sign-break-msg: '&cYou broke the spawn sign!'
 
 # Enable the gui setup?
 enable-gui: false
 # How many rows should the GUI have?
 gui-rows: 1
 # What should the name of the GUI be?
-gui-name: '&5Spawn settings'
-# Message when the player has opened the gui.
-gui-open-message: '&aYou opened the spawn settings.'
+gui-name: "&5Spawn settings"
 # Close the GUI when a player clicks on an item?
 close-gui-when-player-clicked-on-a-item: true
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
@@ -383,42 +388,42 @@ close-gui-when-player-clicked-on-a-item: true
 items:
   slot-0:
     item: AIR
-    command: ''
+    command: ""
   slot-1:
     item: AIR
-    command: ''
+    command: ""
   slot-2:
     item: SIGN
     durability: 0
-    name: '&3Setspawn'
+    name: "&3Setspawn"
     lore:
-      - '&7------------'
-      - '&aSet spawn command.'
-      - '&7------------'
+      - "&7------------"
+      - "&aSet spawn command."
+      - "&7------------"
     command: setspawn
   slot-3:
     item: AIR
-    command: ''
+    command: ""
   slot-4:
     item: ENDER_PEARL
     durability: 0
-    name: '&6Teleport'
+    name: "&6Teleport"
     lore:
-      - '&7------------'
-      - '&aTeleport to the spawn.'
-      - '&7------------'
+      - "&7------------"
+      - "&aTeleport to the spawn."
+      - "&7------------"
     command: spawn
   slot-5:
     item: AIR
-    command: ''
+    command: ""
   slot-6:
     item: BONE
     durability: 0
-    name: '&4Delete spawn'
+    name: "&4Delete spawn"
     lore:
-      - '&7------------'
-      - '&5Delete spawn location.'
-      - '&7------------'
+      - "&7------------"
+      - "&5Delete spawn location."
+      - "&7------------"
     command: delspawn
 
 #=========================================#
@@ -444,9 +449,5 @@ log-to-file: true
 plugin-enable: '%prefix%&a The plugin successfully enabled&6 v${version}&a!'
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
-# The default is allowed to see the plugin information.
-# Permission: setthespawn.plugininfo
-default-can-see-plugin-information: false
-
 # DO NOT CHANGE THIS!
-config-version: 4
+config-version: 5
