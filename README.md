@@ -1,4 +1,4 @@
-# SetTheSpawn [![GitHub release](https://img.shields.io/github/release/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![Github All Releases](https://img.shields.io/github/downloads/montlikadani/RageMode/total.svg)](https://github.com/montlikadani/RageMode/releases) [![GitHub issues](https://img.shields.io/github/issues/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/issues)
+# SetTheSpawn [![GitHub release](https://img.shields.io/github/release/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![Github All Releases](https://img.shields.io/github/downloads/montlikadani/SetTheSpawn/total.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![GitHub issues](https://img.shields.io/github/issues/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/issues)
 
 [![bStats](https://img.shields.io/badge/bStats-1.4-brightgreen.svg)](https://bstats.org/plugin/bukkit/SetTheSpawn)
 
