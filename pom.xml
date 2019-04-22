@@ -15,6 +15,4 @@
         <version>1.4</version>
     </parent>
 
-    <artifactId>bstats-bukkit</artifactId>
-
 </project>

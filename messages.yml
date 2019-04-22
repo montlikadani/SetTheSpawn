@@ -18,16 +18,20 @@ op-players-not-teleport: "&cOp players can not be teleport to spawn."
 bed-spawn-teleport-success: "&aTeleporting to your bed spawn point..."
 gui-open-message: "&aYou opened the spawn settings."
 setup-no-console: "%prefix%&c This command '&7/%command% setup&c' can only be used by players."
+player-is-in-fire: "&cYou're in a fire, so you can't teleport."
+player-flying-when-teleport: "&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!"
+player-afk-status-tp-spawn: "&cYou're in afk status, but automatically teleported yourself to spawn."
+# Use %number% placeholder.
 not-a-number: "&e%number%&c is not a number."
 spawn-sign:
   sign-created: "%prefix%&a The spawn sign was successfully created!"
   sign-break-msg: "&cYou broke the spawn sign!"
 import-essentials-spawn:
-  delete-old-file: "&2Deleting old spawn location..."
+  delete-old-spawn: "&2Deleting old spawn location..."
   importing: "&2Importing Essentials spawn location...&7 Messages in the console."
   import-success: "&aImporting success!"
   import-not-succeed: "&cImporting is not succeed."
-  essentials-not-enabled: "&cThe Essentials & EssentialsSpawn plugin is not enabled. Please enable to use this function."
+  essentials-not-enabled: "&cThe Essentials & EssentialsSpawn plugin not found. Please install to use this function."
 toggle-spawn:
   spawn-use-toggled-off: "%prefix%&c The spawn successfully locked."
   spawn-use-toggled-on: "%prefix%&a The spawn successfully unlocked."
@@ -101,4 +105,4 @@ chat-messages:
   - "&e&m-----------------------------------------"
 
 # DO NOT CHANGE THIS!
-config-version: 4
+config-version: 5

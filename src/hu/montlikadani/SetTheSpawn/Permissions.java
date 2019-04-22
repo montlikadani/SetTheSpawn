@@ -28,6 +28,7 @@ public class Permissions {
 		TOGGLESPAWN("setthespawn.togglespawn"),
 		BYPASSTOGGLESPAWN("setthespawn.togglespawn.bypass"),
 		BYPASSFLY("setthespawn.bypass.fly"),
+		BYPASSFIRE("setthespawn.bypass.fire"),
 		BYPASSSNEAK("setthespawn.bypass.sneak"),
 
 		SPAWNCOST(plugin.getConfig().getString("spawn-cost.permission")),

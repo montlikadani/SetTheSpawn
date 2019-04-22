@@ -1,3 +1,19 @@
+# v2.2
+Added:
+  Added option to prevent spawn use when player is in fire.
+  Added option to teleport player to spawn when afk status is true.
+Fixes:
+  Fix NPE when set the spawn cost and the cost not a number.
+  Fix NPE when the string not found in the messages file.
+  Fixed when the plugin checked the version, for some reason the scanner was not recognized by any version of Java so it caused a problem.
+  Fixed import permission tab-complete not work correctly.
+Other:
+  Now checks the lines of signs in the configuration list to prevent exceptions.
+  Some strings are simplified, such as sound or effect, e.g in the sounds the volume or pitch.
+  Now the titles can be used as empty strings, so if title empty and the subtitle not, then sends only the subtitle.
+  Now checks in the import command the player group from essentials.
+  Now the import only removes the old spawn location when the task is success.
+
 # v2.1
 Added:
     Added optional option to set the spawn cost in spawns file. (/setspawn [cost])

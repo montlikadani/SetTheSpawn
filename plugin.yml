@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 2.1
+version: 2.2
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
@@ -45,6 +45,7 @@ permissions:
        setthespawn.togglespawn: true
        setthespawn.togglespawn.bypass: true
        setthespawn.bypass.fly: true
+       setthespawn.bypass.fire: true
        setthespawn.bypass.sneak: true
        setthespawn.reload: true
        setthespawn.disable: true
@@ -105,6 +106,9 @@ permissions:
     default: false
   setthespawn.bypass.fly:
     description: Bypass the flight when a player want teleport to spawn when flying.
+    default: false
+  setthespawn.bypass.fire:
+    description: Prevent spawn when player is in fire.
     default: false
   setthespawn.bypass.sneak:
     description: Bypass the sneak mode when a player want teleport to spawn when sneak.
