@@ -1,4 +1,4 @@
-package hu.montlikadani.SetTheSpawn;
+package hu.montlikadani.setthespawn;
 
 public class Permissions {
 

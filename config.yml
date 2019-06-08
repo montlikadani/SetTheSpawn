@@ -25,6 +25,11 @@ vault: false
 # If 0 you do not have to wait.
 teleport-delay: 0 # In seconds!
 
+# This allows to send the messages repeatedly when the player starts
+# teleporting and timer, or if it is false, sends the message once only.
+# This can affect the use of server ram when enabled.
+teleport-message-repeater: false
+
 # Teleport progress bar.
 progress-bar:
   enable: false
@@ -64,7 +69,7 @@ auto-teleport-to-spawn-when-player-afk: false
 # If it is false, it will write to the spawns.yml file, the world name for the coordinates, and so on.
 per-world-spawn: false
 
-# Teleport to the set player bed spawn. If the player bed spawn not found, teleports to the default spawn.
+# Teleport to the set player bed spawn. If the player bed spawn not found, teleports to the spawn.
 # The bed location not manage by this plugin!
 teleport-to-bed-spawn: false
 
@@ -96,7 +101,7 @@ check-sneak-while-teleport:
   message: "&cTeleporting is canceled because snake mode is enabled."
 
 # Cost /spawn command or sign usage.
-# This requires a Vault plugin.
+# For this requires a Vault plugin.
 spawn-cost:
   enable: false
   enable-permission: true
@@ -291,8 +296,7 @@ void-on-spawn:
     enable: true
     # All effects:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
-    effect: ENDER_SIGNAL
-    duration: 15
+    effect: ENDER_SIGNAL, 15
   # Message when the player has void fall and teleported to spawn.
   message: ""
 
@@ -327,7 +331,7 @@ spawn-sign:
     # If it is true, it will break the sign.
     # If it is false, it does not break the sign.
     break-sign: false
-    # If it is 'enable: true', it writes to the sign.
+    # If this enabled then writes the lines to sign.
     setline:
       enable: true
       lines:
@@ -369,7 +373,7 @@ spawn-sign:
       - "%all%"
       - "%world%"
       - "%text%"
-  # Play particle effect when you create a spawn sign?
+  # Play particle effect when a user creates a spawn sign?
   play-particle-effect-on-sign-create:
     enable: true
     # All particle effects: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
@@ -451,4 +455,4 @@ plugin-enable: '%prefix%&a The plugin successfully enabled&6 v${version}&a!'
 plugin-disable: '%prefix%&c The plugin successfully disabled!'
 
 # DO NOT CHANGE THIS!
-config-version: 6
+config-version: 7

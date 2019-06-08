@@ -1,9 +1,10 @@
 name: SetTheSpawn
-main: hu.montlikadani.SetTheSpawn.SetTheSpawn
-version: 2.2
+main: hu.montlikadani.setthespawn.SetTheSpawn
+version: 2.3
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
+api-version: 1.13
 # DO NOT EDIT ANYTHING ABOVE THIS LINE!
 
 commands:

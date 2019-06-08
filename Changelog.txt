@@ -1,3 +1,19 @@
+# v2.3
+Added:
+  Added option to config to send teleport messages repeatedly or just once.
+  Added option to teleport to other world and not only in player world when the `toWorld` string is specified in spawns file.
+Fixes:
+  Fixed error when finding the Essentials plugin, but not find and tried to register the event, but not success.
+  Fixed issue with GUI when the lore list is empty, then throws an error.
+  Fixed a minor issue when the progress bar is end, then adds one line after the cooldown.
+  Fixed issue when the per-world-spawn is enabled and teleported to spawn, it was not teleport in the center of block.
+Removed:
+  Fully removed 1.7 support. This version is VERY outdated.
+Other:
+  Now the teleport task will cancel it firstly before executing other functions.
+  Plugin updated to 1.14.
+  Spawn sign and GUI now works in 1.14.
+
 # v2.2
 Added:
   Added option to prevent spawn use when player is in fire.
