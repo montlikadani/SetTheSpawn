@@ -1,3 +1,16 @@
+# v2.4
+Added:
+  Added argument for /sts togglespawn all to toggle the spawn for all online players.
+Fixes:
+  Fixed NPE when in the GUI item name string not find in configuration.
+  Fixed actionbar not work correctly in latest versions.
+  Fixed colors not work correctly in GUI for Paper softwares.
+Removed:
+  Removed /sts disable command - It will broke the plugin when disabled
+Other:
+  Some minor changes and optimizations.
+  Toggled spawns are now saved (when plugin disabled) in a file to remain the toggles.
+
 # v2.3
 Added:
   Added option to config to send teleport messages repeatedly or just once.

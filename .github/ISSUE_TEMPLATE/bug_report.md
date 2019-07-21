@@ -1,31 +1,26 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a bug report to help us improve
 
 ---
 
-### Describe the bug (required)
+### Describe your problem to what is
 Understand what the problem is with the plugin.
 
-### Plugin version (required)
-Describe the plugin version you are using now.
+### Details
+Plugin version: 
+Software (Spigot/Bukkit etc.. `/version`) version: 
 
-### Console error (required)
-> 
-> Send the console error if you have it.
->
-
-### Config.yml or other file
-Send the config.yml or other file.
-(required)
+### Console error
 ```
-config.yml
+Send the console error if you have it.
 ```
 
-(optional)
+### Configuration file(s)
+Send the configuration file(s).
 ```
-other file
+configuration file
 ```
 
 ### Screenshots (optional)
-Send a few pictures of the problem if you can.
+Send a few pictures about the problem if you can.

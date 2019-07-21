@@ -5,10 +5,8 @@ public class Permissions {
 	private static SetTheSpawn plugin = SetTheSpawn.getPlugin(SetTheSpawn.class);
 
 	public enum Perm {
-		PINFO("setthespawn.plugininfo"),
 		HELP("setthespawn.help"),
 		RELOAD("setthespawn.reload"),
-		PDISABLE("setthespawn.disable"),
 		SETSPAWN("setthespawn.setspawn"),
 		SPAWNUSE("setthespawn.spawn.use"),
 		DELSPAWN("setthespawn.delspawn"),
@@ -26,6 +24,7 @@ public class Permissions {
 		BUKKITSPAWNOTHER("setthespawn.bukkitspawn.other"),
 		IMPORTESSSPAWN("setthespawn.importessspawn"),
 		TOGGLESPAWN("setthespawn.togglespawn"),
+		TOGGLEALL("setthespawn.togglespawn.all"),
 		BYPASSTOGGLESPAWN("setthespawn.togglespawn.bypass"),
 		BYPASSFLY("setthespawn.bypass.fly"),
 		BYPASSFIRE("setthespawn.bypass.fire"),

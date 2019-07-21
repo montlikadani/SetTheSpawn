@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.setthespawn.SetTheSpawn
-version: 2.3
+version: 2.4
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
@@ -45,11 +45,11 @@ permissions:
        setthespawn.importessspawn: true
        setthespawn.togglespawn: true
        setthespawn.togglespawn.bypass: true
+       setthespawn.togglespawn.all: true
        setthespawn.bypass.fly: true
        setthespawn.bypass.fire: true
        setthespawn.bypass.sneak: true
        setthespawn.reload: true
-       setthespawn.disable: true
        setthespawn.help: true
   setthespawn.spawn.use:
     description: Allows a player to use /spawn command.
@@ -105,6 +105,9 @@ permissions:
   setthespawn.togglespawn.bypass:
     description: Bypass the togglespawn when the spawn has locked with command.
     default: false
+  setthespawn.togglespawn.all:
+    description: Allows to the player to use /sts togglespawn all command.
+    default: false
   setthespawn.bypass.fly:
     description: Bypass the flight when a player want teleport to spawn when flying.
     default: false
@@ -120,6 +123,3 @@ permissions:
   setthespawn.reload:
     description: Reload the config files.
     default: false
-  setthespawn.disable:
-    description: Allow to player to disable plugin.
-    default: op
