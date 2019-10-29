@@ -1,8 +1,10 @@
 package hu.montlikadani.setthespawn;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 public class Permissions {
 
-	private static SetTheSpawn plugin = SetTheSpawn.getPlugin(SetTheSpawn.class);
+	private static SetTheSpawn plugin = JavaPlugin.getPlugin(SetTheSpawn.class);
 
 	public enum Perm {
 		HELP("setthespawn.help"),
@@ -29,15 +31,16 @@ public class Permissions {
 		BYPASSFLY("setthespawn.bypass.fly"),
 		BYPASSFIRE("setthespawn.bypass.fire"),
 		BYPASSSNEAK("setthespawn.bypass.sneak"),
+		BYPASSMINECART("setthespawn.bypass.minecart"),
 
-		SPAWNCOST(plugin.getConfig().getString("spawn-cost.permission")),
-		SPAWNSIGNCOST(plugin.getConfig().getString("spawn-cost.sign.permission")),
-		SPAWNMOVEDCOST(plugin.getConfig().getString("cancel-teleport.move.pay-if-moved.permission")),
-		SPAWNJUMPEDCOST(plugin.getConfig().getString("cancel-teleport.jump.pay-if-jumped.permission")),
-		SPAWNDAMAGECOST(plugin.getConfig().getString("cancel-teleport.damage.pay-if-damage.permission")),
-		CANCELTPMOVE(plugin.getConfig().getString("cancel-teleport.move.permission")),
-		CANCELTPJUMP(plugin.getConfig().getString("cancel-teleport.jump.permission")),
-		CANCELTPDAMAGE(plugin.getConfig().getString("cancel-teleport.damage.permission"));
+		SPAWNCOST(plugin.getConfig().getString("spawn-cost.permission", "")),
+		SPAWNSIGNCOST(plugin.getConfig().getString("spawn-cost.sign.permission", "")),
+		SPAWNMOVEDCOST(plugin.getConfig().getString("cancel-teleport.move.pay-if-moved.permission", "")),
+		SPAWNJUMPEDCOST(plugin.getConfig().getString("cancel-teleport.jump.pay-if-jumped.permission", "")),
+		SPAWNDAMAGECOST(plugin.getConfig().getString("cancel-teleport.damage.pay-if-damage.permission", "")),
+		CANCELTPMOVE(plugin.getConfig().getString("cancel-teleport.move.permission", "")),
+		CANCELTPJUMP(plugin.getConfig().getString("cancel-teleport.jump.permission", "")),
+		CANCELTPDAMAGE(plugin.getConfig().getString("cancel-teleport.damage.permission", ""));
 
 		private String perm;
 

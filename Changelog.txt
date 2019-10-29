@@ -1,3 +1,16 @@
+# v2.5
+Added:
+  Added option to teleport the player to the world spawn location if the player executed.
+  Added option to firework to explode instantly.
+  Added option to prevent teleporting to spawn while a player is in minecart.
+  Added sub-command argument to spawn to teleports to other world spawn.
+  Added option to signs to teleport to other world spawn if the spawn set and the given world exists.
+Removed:
+  Removed ability to delete the spawn from console.
+Other:
+  Now players will be paid after using the spawn.
+  There is no longer delay when importing spawn from essentials.
+
 # v2.4
 Added:
   Added argument for /sts togglespawn all to toggle the spawn for all online players.

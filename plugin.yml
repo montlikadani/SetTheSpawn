@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.setthespawn.SetTheSpawn
-version: 2.4
+version: 2.5
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
@@ -49,6 +49,7 @@ permissions:
        setthespawn.bypass.fly: true
        setthespawn.bypass.fire: true
        setthespawn.bypass.sneak: true
+       setthespawn.bypass.minecart: true
        setthespawn.reload: true
        setthespawn.help: true
   setthespawn.spawn.use:
@@ -116,6 +117,9 @@ permissions:
     default: false
   setthespawn.bypass.sneak:
     description: Bypass the sneak mode when a player want teleport to spawn when sneak.
+    default: false
+  setthespawn.bypass.minecart:
+    description: Allows us to spawn while player is in minecart.
     default: false
   setthespawn.help:
     description: Help commands for SetTheSpawn.

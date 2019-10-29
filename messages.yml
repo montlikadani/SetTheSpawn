@@ -1,4 +1,3 @@
-# Use %newline% placeholder.
 teleport-wait: "&cPlease wait while the teleport delay and teleportation will be successful."
 spawn-teleport-success: "&6Teleporting..."
 error-spawn-not-set: "&4ERROR:&c The spawn location has NOT been set! Type '&7/setspawn&c' to set spawn position."
@@ -6,21 +5,23 @@ spawn-deleted: "&cThe spawn successfully deleted."
 spawn-already-deleted: "&cThe spawn already deleted."
 no-spawn: "&cThe spawn has not yet been set."
 spawn-no-console: "&cUse: '&7/spawn <player/all>&c'."
-all-teleport-delay-cancelled: "&4WARNING!&c All teleports in progress are canceled."
-all-teleport-successfully-cancelled: "&a You've successfully stopped all ongoing teleports."
+all-teleport-delay-cancelled: "&cAll teleports in progress are canceled."
+all-teleport-successfully-cancelled: "&aYou've successfully stopped all ongoing teleports."
 no-started-tp: "&cNobody started a teleportation so it was not possible to stop the delay."
 reload-config: "&aThe plugin successfully reloaded!"
 no-players-who-teleport: "&cNo one you can teleport."
 all-player-teleport-success-with-sign: "&2Everyone was teleported to the spawn."
 op-players-not-teleport: "&cOp players can not be teleport to spawn."
 bed-spawn-teleport-success: "&aTeleporting to your bed spawn point..."
-gui-open-message: "&aYou opened the spawn settings."
 setup-no-console: "&cThis command '&7/%command% setup&c' can only be used by players."
 player-is-in-fire: "&cYou're in a fire, so you can't teleport."
-player-flying-when-teleport: "&cYou can not teleport to the spawn in fly mode!%newline%&cTeleportation cancelled!"
+player-flying-when-teleport: "&cYou can not teleport to the spawn in fly mode!\n&cTeleportation cancelled!"
 player-afk-status-tp-spawn: "&cYou're in afk status, but automatically teleported yourself to spawn."
-# Use %number% placeholder.
+player-is-in-minecart: "&cYou can't teleport to the spawn while is in minecart."
 not-a-number: "&e%number%&c is not a number."
+world-not-exists: "&cWorld&e %world%&c is not exists."
+gui-open-message: ""
+
 spawn-sign:
   sign-created: "&aThe spawn sign was successfully created!"
   sign-break-msg: "&cYou broke the spawn sign!"
@@ -38,20 +39,13 @@ toggle-spawn:
   no-player: "&cThere is no player available on the server."
   player-not-found: "&cThis player&7 %player%&c not found!"
 
-# Use %subcmd% placeholder.
 unknown-sub-command: "&cUnknown sub-command&7 %subcmd%&c."
-
-# Use %perm% placeholder.
 no-permission: "&cYou don't have permission for that!&7 (%perm%)"
 no-permission-to-create-spawn-sign: "&cYou do not have permission to create a spawn sign!&7 (%perm%)"
 no-permission-to-break-sign: "&cNo permission to break the spawn sign!&7 (%perm%)"
 no-permission-to-use-sign: "&cNo permission to use the spawn sign!&7 (%perm%)"
-
-# Use %command% placeholder.
 unknown-command: "&cUnknown command.&7 Type '&f/%command% help&7' for help."
 no-console: "&cThis command '&7/%command%&c' can only be used by players."
-
-# Use %world% placeholder.
 spawn-successfully-set: "&aThe spawn successfully set in world:&b %world%&a."
 world-not-allowed: "&cIn this world&7 %world%&c is not allowed to set spawn!"
 world-spawn:
@@ -59,8 +53,6 @@ world-spawn:
   already-deleted: "&cThe&7 %world%&c world spawn already deleted."
   spawn-deleted: "&cThe&8 %world%&c world spawn successfully deleted."
   teleport-success: "&6Teleporting to&5 %world%&6..."
-
-# Use %player% placeholder.
 player-not-online: "&cThis player&e %player%&c is not online."
 teleport-other-spawn: "&2You teleported&5 %player%&2 player to spawn!"
 bukkit-spawn-teleport:
@@ -68,24 +60,18 @@ bukkit-spawn-teleport:
   teleported: "&aYou have been successfully teleported to bukkit spawn."
   player-not-found: "&cThis player&7 %player%&c not found."
   target-teleported: "&aYou have successfully teleported&e %player%&a to spawn."
-
-# Use %seconds% placeholder.
 teleport-wait-msg: "&6Teleporting in&c %seconds%&6 seconds...&4 Don't move!"
-
-# Use %cost% placeholder.
 not-enough-money: "&cYou do not have enough money to execute this command.&e Cost:&a $%cost%"
 not-enough-money-sign: "&cYou do not have enough money to use the sign.&e Cost:&a $%cost%"
-
-# Use %sender% placeholder.
 teleport-all-players: "&2Everyone was teleported to the spawn by:&c %sender%."
 other-player-teleported: "&e%sender%&a teleported you to spawn."
 
-# This feature lists all the chat panel help.
 chat-messages:
   1:
   - "&e&m---------&b> &e[&9Set&2The&4Spawn&2 Help&e]&b <&e&m----------"
   - ""
   - "&7-&9 []&7 -&9 optional arguments"
+  - "&7-&c ()&7 -&c required arguments"
   - "&7-&3 ()&7 -&3 command abbreviations"
   - ""
   - "&8/&a%command%&b [+TAB]&5 -&6 Main plugin info."
@@ -103,8 +89,9 @@ chat-messages:
   - "&8/&asetspawn&9 [world]&5 -&6 Set the spawn location to that world to tp to other world."
   - "&8/&adeletespawn&3 (or delspawn)&5 -&6 Delete the spawn location."
   - "&8/&aspawn&9 [player&2/&9all]&5 -&6 Teleport to the spawn location."
+  - "&8/&aspawn&c <player> <world>&5 -&6 Teleports the player to the given world spawn."
   - "&8/&a%command% importessentialsspawn&3 (or importessspawn)&9 [group]&5 -&6 Imports the Essentials spawn to the plugin."
   - "&e&m-----------------------------------------"
 
 # DO NOT CHANGE THIS!
-config-version: 6
+config-version: 7
