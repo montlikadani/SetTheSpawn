@@ -1,30 +1,13 @@
-#=================================OOO====================================#
-#                     SetTheSpawn Configuration File                     #
-#                  Author, created by: montlikadani                      #
-#=================================OOO====================================#
-# [Default configuration]                                                #
-# https://github.com/montlikadani/SetTheSpawn/blob/master/config.yml     #
-#                                                                        #
-# [Placeholders]                                                         #
-# https://github.com/montlikadani/SetTheSpawn/wiki/Placeholders          #
-#                                                                        #
-# [Tips]                                                                 #
-# - Use color coding '&' character, on this page:                        #
-# https://minecraft.gamepedia.com/Formatting_codes                       #
-# - If you find a bug, send here:                                        #
-# https://github.com/montlikadani/SetTheSpawn/issues                     #
-#=================================OOO====================================#
-
-# Use the Vault plugin for the plugin.
+# Use the Vault plugin for this to make the spawn costly.
 vault: false
 
-# How many seconds do you have to wait for a player to be teleported?
-# If 0 you do not have to wait.
+# How many seconds have to wait for a player to be teleported?
+# If 0, will instantly teleports.
 teleport-delay: 0 # In seconds!
 
 # This allows to send the messages repeatedly when the player starts
-# teleporting and timer, or if it is false, sends the message once only.
-# This can affect the use of server ram when enabled.
+# teleporting, or if it is false, sends the message once only.
+# This can affect the use of server performance when enabled.
 teleport-message-repeater: false
 
 # Teleport progress bar while the player started teleport.
@@ -58,10 +41,8 @@ teleport-to-world-spawn-if-spawn-not-found: true
 # This will be ignored if the world spawn are not set.
 teleport-to-world-spawn: false
 
-# Teleport op players to spawn. (Sign & spawn command)
-# If false - does not teleport operator players.
-# If true - teleports op players to spawn.
-# This only sign & command work. (If everybody teleport)
+# Do include operator players in teleporting to teleport them?
+# This happens when a player teleports everyone.
 teleport-op-players: false
 
 # A player teleported to the spawn, how many seconds to protect the player from damage?
@@ -72,20 +53,22 @@ no-damage-time: 0
 # Requires Essentials!
 auto-teleport-to-spawn-when-player-afk: false
 
-# Is it a spawn setting in separate worlds?
-# If true, it will save to the spawns.yml file in the world where the player is currently in (setup).
-# If it is false, it will save to the spawns.yml file, and can be saved more than one.
+# Use separate worlds?
+# If enabled, will changes the spawn behavior when the players teleporting.
+# So if this true then the players will be teleported to the spawn where the player is in that world.
+# This will changes the spawn settings in the spawns file.
 per-world-spawn: false
 
-# Teleport to the set player bed spawn. If the player bed spawn not found, teleports to the spawn.
-# The bed location not manage by this plugin!
+# Teleport to the set player bed spawn. If the player bed spawn not found,
+# will teleporting to the spawn.
+# The bed location not handled by this plugin!
 teleport-to-bed-spawn: false
 
-# In which worlds can spawn not be set?
+# In which worlds can spawn not be set and used?
 disabled-worlds:
 #- world_the_end
 
-# Disable spawn command in pvp.
+# Prevent spawn command executing when a player in pvp.
 disable-spawn-in-pvp:
   enable: false
 
@@ -95,7 +78,7 @@ disable-spawn-in-pvp:
   # Message when you attack a player or attack you.
   message: "&cNow you can not teleport to spawn because you're still fighting with a player."
 
-# Check if the player is flying mode?
+# Check if the player is in flying mode?
 # If it is true, players can teleport while flying.
 # If it is false, it will cancel the teleport delay.
 # This ignores with setthespawn.bypass.fly permission.
@@ -109,14 +92,15 @@ allow-spawn-when-is-in-minecart: false
 # This ignores with setthespawn.bypass.fire permission.
 prevent-spawn-when-player-is-in-fire: false
 
-# When a player presses the SHIFT button while teleporting, and sits in snake mode, will it cancel teleportation?
+# When a player presses the SHIFT button while teleporting, and sits in snake mode,
+# will it cancel the teleportation?
 # This ignores with setthespawn.bypass.sneak permission.
 check-sneak-while-teleport:
   enable: false
   message: "&cTeleporting is canceled because snake mode is enabled."
 
-# Cost for /spawn command or sign usage.
-# For this requires a Vault plugin.
+# Cost for /spawn command executing or sign interacting.
+# For this, requires the Vault plugin.
 spawn-cost:
   enable: false
 
@@ -128,11 +112,11 @@ spawn-cost:
   # This can be set as per-spawn when setting the spawn point.
   cost: 3.0
 
-  # Sign usage price. (Same as /spawn command.)
+  # Sign usage price (Same as /spawn command)
   sign:
     enable: false
 
-    # If this is given at the rank, they can use the spawn sign without payment.
+    # If this is given at the group, they can use the spawn sign without payment.
     # If not given, the spawn sign usage must be paid.
     # This will be ignored if this empty.
     permission: setthespawn.bypass.signcost
@@ -169,7 +153,6 @@ cancel-teleport:
       # The permission to bypass move pay
       permission: setthespawn.bypass.spawn.movedcost
 
-      # Use %cost% placeholder.
       no-money: "&cYou do not have enough money to move during teleport.&e Cost:&a $%cost%"
 
   # Player was jump while teleporting.
@@ -199,7 +182,6 @@ cancel-teleport:
       # The permission to bypass jump while teleporting.
       permission: setthespawn.bypass.spawn.jumpedcost
 
-      # Use %cost% placeholder.
       no-money: "&cYou do not have enough money to jump in teleport.&e Cost:&a $%cost%"
 
   # When the player is attacked while teleporting.
@@ -229,7 +211,6 @@ cancel-teleport:
       # The permission to bypass cancel teleport for getting damage.
       permission: setthespawn.bypass.spawn.damagecost
 
-      # Use %cost% placeholder.
       no-money: "&cYou do not have enough money for the teleport damage.&e Cost:&a $%cost%"
 
 # When a player is being teleported, will plays an effect?
@@ -282,7 +263,6 @@ title:
   start-spawn:
     enable: false
 
-    # Use %seconds% placeholder.
     title: "&aTeleporting in"
     subtitle: "&6%seconds%&a seconds"
 
@@ -297,8 +277,6 @@ title:
     title: "&3Teleport"
     subtitle: "&asuccess!"
 
-    # The title times to be displayed, stay and removing from the screen. (In ticks)
-    # Usage: fadeIn, stay, fadeOut
     times: 10, 30, 60
 
   # When a player moves while teleporting.
@@ -308,8 +286,6 @@ title:
     title: "&cYou moved!"
     subtitle: "&eTeleport cancelled."
 
-    # The title times to be displayed, stay and removing from the screen. (In ticks)
-    # Usage: fadeIn, stay, fadeOut
     times: 10, 30, 50
 
   # When a player jump while teleporting.
@@ -319,8 +295,6 @@ title:
     title: "&cYou jumped!"
     subtitle: "&eTeleport cancelled."
 
-    # The title times to be displayed, stay and removing from the screen. (In ticks)
-    # Usage: fadeIn, stay, fadeOut
     times: 10, 30, 50
 
   # When teleporting player are attacked while teleporting.
@@ -330,11 +304,9 @@ title:
     title: "&cA player was attacked!"
     subtitle: "&eTeleport cancelled."
 
-    # The title times to be displayed, stay and removing from the screen. (In ticks)
-    # Usage: fadeIn, stay, fadeOut
     times: 10, 30, 50
 
-# When does the player void, will the player teleport to the spawn?
+# If the player is in the void, will it teleports to the spawn?
 void-on-spawn:
   enable: false
 
@@ -361,7 +333,6 @@ void-on-spawn:
 teleport-on-command:
   enable: false
 
-  # Use %player%, %player-displayname%, %world%, %player-gamemode%, %player-health%, %player-max-health% placeholder.
   # Use player & console arguments for first.
   commands:
   - "player: money"
@@ -380,7 +351,7 @@ spawn-teleport:
   # the player is died?
   respawn: false
 
-# Spawn sign settings.
+# Spawn sign settings
 spawn-sign:
   # Allows you to create and use the spawn sign.
   enable: true
@@ -394,7 +365,7 @@ spawn-sign:
     # If it is false, it does not break the sign.
     break-sign: false
 
-    # If this enabled then writes the lines to sign.
+    # If this enabled, will writes the lines to sign.
     setline:
       enable: true
 
@@ -405,7 +376,6 @@ spawn-sign:
       - "&ca sign!"
 
   # If the spawn is not set up and what to write.
-  # Use %text% placeholder.
   no-spawn:
   - "&c[Spawn]"
   - "%text%"
@@ -420,7 +390,6 @@ spawn-sign:
     - "%text%"
     - "%text%"
 
-    # Use %all% placeholder.
     everybody:
     - "&9[Spawn]"
     - "%all%"
@@ -429,14 +398,12 @@ spawn-sign:
 
     # If the world spawn is set and what to write.
     per-world:
-      # Use %world% placeholder.
       lines:
       - "&9[Spawn]"
       - "&6%world%"
       - "%text%"
       - "%text%"
 
-      # Use %all%, %world% placeholder.
       everybody:
       - "&9[Spawn]"
       - "%all%"
@@ -452,7 +419,7 @@ gui-rows: 1
 # What should the name of the GUI be?
 gui-name: "&5Spawn settings"
 
-# Close the GUI when a player clicks on an item?
+# Close the GUI when a player clicks on an item and executed successfully?
 close-gui-when-player-clicked-on-a-item: true
 
 # All GUI items are here. Add slots in the same format, and it will add items to the GUI.
@@ -461,10 +428,8 @@ close-gui-when-player-clicked-on-a-item: true
 items:
   slot-0:
     item: air
-    command: ""
   slot-1:
     item: air
-    command: ""
   slot-2:
     item: SIGN
     durability: 0
@@ -476,7 +441,6 @@ items:
     command: setspawn
   slot-3:
     item: air
-    command: ""
   slot-4:
     item: ENDER_PEARL
     durability: 0
@@ -488,7 +452,6 @@ items:
     command: spawn
   slot-5:
     item: air
-    command: ""
   slot-6:
     item: bone
     durability: 0
@@ -513,4 +476,4 @@ plugin-enable: '&6[&9Set&2The&4Spawn&6]&7 >&a The plugin successfully enabled&6 
 plugin-disable: '&6[&9Set&2The&4Spawn&6]&7 >&c The plugin successfully disabled!'
 
 # DO NOT CHANGE THIS!
-config-version: 8
+config-version: 9
