@@ -1,3 +1,16 @@
+# v2.6
+- Now the players SHOULD pay before using spawn command, to do not ignore the pay.
+- Lots of improvements, including code clean up, readability and so on.
+- Recoded the spawn handling to avoid any issues when saving or deleting.
+- Recoded the config handling to prevent config loading issues.
+- Fixed a lot of exception errors when executing commands.
+- Now supports mc 1.15+ versions.
+- Fixed when the spawns are not loaded correctly on plugin reload.
+- Fixed issue when the user toggled the spawn usage for all players and sent a lot of messages.
+- Temporary fixed an issue when teleporting with rideable entities and getting damaged because of new versions.
+- Now if the option "per-world-spawn" is changed then converts the old style of spawns file to the new format for easy and fast work.
+- Now in the progress bar will displays the current time of teleportation. (It still needs some work, but it works.)
+
 # v2.5
 Added:
   Added option to teleport the player to the world spawn location if the player executed.
