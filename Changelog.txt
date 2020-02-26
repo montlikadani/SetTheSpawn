@@ -1,3 +1,8 @@
+# v2.6.1
+This release contains that fix where the users set a spawn and reload the spawns are set to default (0, 0, 0) values.
+
++ some improvements for sending error message to operator players 
+
 # v2.6
 - Now the players SHOULD pay before using spawn command, to do not ignore the pay.
 - Lots of improvements, including code clean up, readability and so on.
