@@ -1,6 +1,6 @@
 # SetTheSpawn [![GitHub release](https://img.shields.io/github/release/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![Github All Releases](https://img.shields.io/github/downloads/montlikadani/SetTheSpawn/total.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![GitHub issues](https://img.shields.io/github/issues/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/issues)
 
-[![bStats](https://img.shields.io/badge/bStats-1.5-brightgreen.svg)](https://bstats.org/plugin/bukkit/SetTheSpawn)
+[![bStats](https://img.shields.io/badge/bStats-1.7-brightgreen)](https://bstats.org/plugin/bukkit/SetTheSpawn)
 
 Set spawn at the location.
 ***
