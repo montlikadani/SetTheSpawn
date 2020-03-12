@@ -1,3 +1,8 @@
+# v2.6.2
+- Fixed issue when you have a spawn in a world (nether) and you want to teleport from another world will not became. This contains recodes of handling spawns (again).
+- Optimized code when there are a lot of double/float number parsing.
+- Added release downloader to download plugin updates.
+
 # v2.6.1
 This release contains that fix where the users set a spawn and reload the spawns are set to default (0, 0, 0) values.
 

@@ -468,6 +468,10 @@ items:
 # Check for updates.
 check-update: true
 
+# Download releases to \releases folder
+# This only works if the "check-update" is true.
+download-updates: true
+
 # Log plugin messages into console.
 logconsole: true
 
