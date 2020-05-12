@@ -1,6 +1,10 @@
 # Use the Vault plugin for this to make the spawn costly.
 vault: false
 
+# Save the toggled spawns to a file to load after server restart.
+# If this false, if the file is exists, it will be deleted automatically at server restart.
+remember-toggled-spawns-to-file: true
+
 # How many seconds have to wait for a player to be teleported?
 # If 0, will instantly teleports.
 teleport-delay: 0 # In seconds!
@@ -153,8 +157,6 @@ cancel-teleport:
       # The permission to bypass move pay
       permission: setthespawn.bypass.spawn.movedcost
 
-      no-money: "&cYou do not have enough money to move during teleport.&e Cost:&a $%cost%"
-
   # Player was jump while teleporting.
   jump:
     enable: true
@@ -182,9 +184,7 @@ cancel-teleport:
       # The permission to bypass jump while teleporting.
       permission: setthespawn.bypass.spawn.jumpedcost
 
-      no-money: "&cYou do not have enough money to jump in teleport.&e Cost:&a $%cost%"
-
-  # When the player is attacked while teleporting.
+  # When the player is attacked somebody while teleporting.
   damage:
     enable: true
 
@@ -201,7 +201,7 @@ cancel-teleport:
       # Usage: SOUND_TYPE, volume, pitch
       type: BLOCK_LEVER_CLICK, 8, 1
 
-    # If the player damage during teleporting, would the player pay for it or not?
+    # If the player get damage during teleporting, would the player pay for it or not?
     pay-if-damage:
       enable: false
 
@@ -210,8 +210,6 @@ cancel-teleport:
 
       # The permission to bypass cancel teleport for getting damage.
       permission: setthespawn.bypass.spawn.damagecost
-
-      no-money: "&cYou do not have enough money for the teleport damage.&e Cost:&a $%cost%"
 
 # When a player is being teleported, will plays an effect?
 teleport-effect:
@@ -235,6 +233,12 @@ teleport-sound:
 # Launch firework when the player teleported to the spawn.
 launch-firework:
   enable: false
+
+  # This will fixes that issue when all the entities got damage after
+  # player teleportation and launching a firework.
+  # This calculates 15 radius around player to make sure the entities not get any damage.
+  # If you have issues with this, then disable it.
+  fix-entity-damage-after-teleportation: true
 
   # If true, the features below do not apply to it.
   random: true
@@ -270,7 +274,7 @@ title:
     # Usage: fadeIn, stay, fadeOut
     times: 10, 30, 60
 
-  # This is when the player has teleported to the spawn and displays the title.
+  # When the player has teleported to the spawn and displays the title.
   end-spawn:
     enable: false
 
@@ -297,7 +301,7 @@ title:
 
     times: 10, 30, 50
 
-  # When teleporting player are attacked while teleporting.
+  # When player are attacked somebody while teleporting.
   player-damage:
     enable: false
 
@@ -365,10 +369,8 @@ spawn-sign:
     # If it is false, it does not break the sign.
     break-sign: false
 
-    # If this enabled, will writes the lines to sign.
+    # If the above option "break-sign" is disabled, will using this.
     setline:
-      enable: true
-
       lines:
       - "&cYou do not have"
       - "&cpermission"
@@ -414,6 +416,7 @@ spawn-sign:
 enable-gui: false
 
 # How many rows should the GUI have?
+# This multiplies the specified number by 9, thus creating the GUI correctly.
 gui-rows: 1
 
 # What should the name of the GUI be?
@@ -422,44 +425,33 @@ gui-name: "&5Spawn settings"
 # Close the GUI when a player clicks on an item and executed successfully?
 close-gui-when-player-clicked-on-a-item: true
 
-# All GUI items are here. Add slots in the same format, and it will add items to the GUI.
+# All GUI items are here.
 # How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
 # Slot starts at 0 and end at 53 for a size 54 inventory.
 items:
-  slot-0:
-    item: air
-  slot-1:
-    item: air
   slot-2:
-    item: SIGN
-    durability: 0
+    item: oak_sign
     name: "&3Setspawn"
     lore:
-      - "&7------------"
-      - "&aSet spawn command."
-      - "&7------------"
+    - "&7------------"
+    - "&aSet spawn command."
+    - "&7------------"
     command: setspawn
-  slot-3:
-    item: air
   slot-4:
     item: ENDER_PEARL
-    durability: 0
     name: "&6Teleport"
     lore:
-      - "&7------------"
-      - "&aTeleport to the spawn."
-      - "&7------------"
+    - "&7------------"
+    - "&aTeleport to the spawn."
+    - "&7------------"
     command: spawn
-  slot-5:
-    item: air
   slot-6:
     item: bone
-    durability: 0
     name: "&4Delete spawn"
     lore:
-      - "&7------------"
-      - "&5Delete spawn location."
-      - "&7------------"
+    - "&7------------"
+    - "&5Delete spawn location."
+    - "&7------------"
     command: delspawn
 
 #=========================================#
@@ -475,9 +467,5 @@ download-updates: true
 # Log plugin messages into console.
 logconsole: true
 
-# Plugin enable/disable messages in console.
-plugin-enable: '&6[&9Set&2The&4Spawn&6]&7 >&a The plugin successfully enabled&6 v${version}&a!'
-plugin-disable: '&6[&9Set&2The&4Spawn&6]&7 >&c The plugin successfully disabled!'
-
 # DO NOT CHANGE THIS!
-config-version: 9
+config-version: 10

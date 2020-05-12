@@ -1,3 +1,13 @@
+# v2.6.3
+- Fixed issue when have 2 world and a player joins to the first world will not teleports to the second world.
+- Fixed some issues when we using per-world option and the convert is not succeed.
+- Added option to fix all entities damage after player teleportation when a firework launched.
+- Improved spawn toggle command to work properly.
+- Some fixes related to handling void-spawn option.
+- Improved gui building, now no need to specify the empty (air) elements.
+- Added option to remember toggled spawns.
+- Fixed error when the gui size is higher than 54.
+
 # v2.6.2
 - Fixed issue when you have a spawn in a world (nether) and you want to teleport from another world will not became. This contains recodes of handling spawns (again).
 - Optimized code when there are a lot of double/float number parsing.
