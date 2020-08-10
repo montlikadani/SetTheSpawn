@@ -1,6 +1,6 @@
 name: SetTheSpawn
 main: hu.montlikadani.setthespawn.SetTheSpawn
-version: 2.6.3
+version: 2.6.4
 author: montlikadani
 description: Set the spawn at the location.
 softdepend: [Vault, Essentials]
@@ -42,6 +42,7 @@ permissions:
        setthespawn.bypass.blockspawninpvp: true
        setthespawn.bukkitspawn: true
        setthespawn.bukkitspawn.other: true
+       setthespawn.joinspawn: true
        setthespawn.importessspawn: true
        setthespawn.togglespawn: true
        setthespawn.togglespawn.bypass: true
@@ -96,6 +97,9 @@ permissions:
     default: false
   setthespawn.bukkitspawn.other:
     description: Allows to the player to use /sts bukkitspawn <player> command.
+    default: false
+  setthespawn.joinspawn:
+    description: Allows to the player to use /sts joinspawn command.
     default: false
   setthespawn.importessspawn:
     description: Allows to the player to use /sts importessspawn [group] command.

@@ -1,6 +1,3 @@
-# Use the Vault plugin for this to make the spawn costly.
-vault: false
-
 # Save the toggled spawns to a file to load after server restart.
 # If this false, if the file is exists, it will be deleted automatically at server restart.
 remember-toggled-spawns-to-file: true
@@ -40,10 +37,14 @@ progress-bar:
 teleport-to-world-spawn-if-spawn-not-found: true
 
 # Teleport the player to the default set world spawn?
-# If this true, ignores the spawn locations that has been set and teleports
+# If this true, ignores the spawn locations, join spawn that has been set and teleports
 # to the world spawn location.
-# This will be ignored if the world spawn are not set.
-teleport-to-world-spawn: false
+#teleport-to-world-spawn: false
+
+# Teleport to the set player bed spawn. If the player bed spawn not found,
+# will teleporting to the spawn.
+# The bed location not handled by this plugin!
+#teleport-to-bed-spawn: false
 
 # Do include operator players in teleporting to teleport them?
 # This happens when a player teleports everyone.
@@ -62,11 +63,6 @@ auto-teleport-to-spawn-when-player-afk: false
 # So if this true then the players will be teleported to the spawn where the player is in that world.
 # This will changes the spawn settings in the spawns file.
 per-world-spawn: false
-
-# Teleport to the set player bed spawn. If the player bed spawn not found,
-# will teleporting to the spawn.
-# The bed location not handled by this plugin!
-teleport-to-bed-spawn: false
 
 # In which worlds can spawn not be set and used?
 disabled-worlds:
@@ -90,7 +86,11 @@ allow-spawn-when-flying: true
 
 # Allows to the player to teleport to the spawn if the player is in minecart.
 # This can be bypassed with setthespawn.bypass.minecart permission.
-allow-spawn-when-is-in-minecart: false
+allow-spawn-when-is-in-minecart: true
+
+# Allows to the player to teleport to the spawn if the player is in boat.
+# This can be bypassed with setthespawn.bypass.boat permission.
+allow-spawn-when-is-in-boat: true
 
 # Prevent spawn teleport when player is in fire?
 # This ignores with setthespawn.bypass.fire permission.
@@ -106,27 +106,23 @@ check-sneak-while-teleport:
 # Cost for /spawn command executing or sign interacting.
 # For this, requires the Vault plugin.
 spawn-cost:
-  enable: false
-
   # If this is given at the group, they can use the /spawn command without payment.
   # If not given, the /spawn command must be paid.
   # This will be ignored if this empty.
   permission: setthespawn.bypass.spawncost
 
   # This can be set as per-spawn when setting the spawn point.
-  cost: 3.0
+  cost: 0.0
 
   # Sign usage price (Same as /spawn command)
   sign:
-    enable: false
-
     # If this is given at the group, they can use the spawn sign without payment.
     # If not given, the spawn sign usage must be paid.
     # This will be ignored if this empty.
     permission: setthespawn.bypass.signcost
 
     # Cost of sign usage
-    cost: 2.0
+    cost: 0.0
 
 # Cancel teleport if:
 cancel-teleport:
@@ -149,10 +145,8 @@ cancel-teleport:
 
     # If the player moved during teleporting, would the player pay for it or not?
     pay-if-moved:
-      enable: false
-
       # Cost for moved during teleport
-      cost: 0.20
+      cost: 0.0
 
       # The permission to bypass move pay
       permission: setthespawn.bypass.spawn.movedcost
@@ -176,10 +170,8 @@ cancel-teleport:
 
     # If the player jumped during teleporting, would the player pay for it or not?
     pay-if-jumped:
-      enable: false
-
       # Cost for jumped during teleport
-      cost: 0.15
+      cost: 0.0
 
       # The permission to bypass jump while teleporting.
       permission: setthespawn.bypass.spawn.jumpedcost
@@ -203,32 +195,26 @@ cancel-teleport:
 
     # If the player get damage during teleporting, would the player pay for it or not?
     pay-if-damage:
-      enable: false
-
       # Cost for get damage during teleport
-      cost: 0.5
+      cost: 0.0
 
       # The permission to bypass cancel teleport for getting damage.
       permission: setthespawn.bypass.spawn.damagecost
 
 # When a player is being teleported, will plays an effect?
 teleport-effect:
-  enable: true
-
   # All effects:
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
   # Usage: EFFECT_TYPE, duration
-  effect: ENDER_SIGNAL, 10
+  #effect: ENDER_SIGNAL, 10
 
 # Player sound when player teleported.
 teleport-sound:
-  enable: false
-
   # All sounds:
   # 1.8.x: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
   # 1.9+: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
   # Usage: SOUND_TYPE, volume, pitch
-  sound: ENDERMAN_TELEPORT, 10, 1
+  #sound: ENDERMAN_TELEPORT, 10, 1
 
 # Launch firework when the player teleported to the spawn.
 launch-firework:
@@ -324,25 +310,21 @@ void-on-spawn:
 
   # When a player void, plays an effect?
   teleport-effect:
-    enable: true
-
     # All effects:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
-    effect: ENDER_SIGNAL, 15
+    #effect: ENDER_SIGNAL, 15
 
   # Message when the player has void fall and teleported to spawn.
   message: ""
 
 # Teleport on command when the player teleported to spawn.
 teleport-on-command:
-  enable: false
-
   # Use player & console arguments for first.
   commands:
-  - "player: money"
-  - "player: kit"
-  - "console: eco take %player% 50"
-  - "console: money"
+  #- "player: money"
+  #- "player: kit"
+  #- "console: eco take %player% 50"
+  #- "console: money"
 
 # Teleport to spawn if:
 spawn-teleport:
