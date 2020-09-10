@@ -4,11 +4,10 @@ remember-toggled-spawns-to-file: true
 
 # How many seconds have to wait for a player to be teleported?
 # If 0, will instantly teleports.
-teleport-delay: 0 # In seconds!
+teleport-delay: 0
 
 # This allows to send the messages repeatedly when the player starts
 # teleporting, or if it is false, sends the message once only.
-# This can affect the use of server performance when enabled.
 teleport-message-repeater: false
 
 # Teleport progress bar while the player started teleport.
@@ -450,4 +449,4 @@ download-updates: true
 logconsole: true
 
 # DO NOT CHANGE THIS!
-config-version: 10
+config-version: 11
