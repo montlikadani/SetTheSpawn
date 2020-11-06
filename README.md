@@ -5,7 +5,7 @@
 Set spawn at the location.
 ***
 
-A fully configurable plugin that allows the player to teleport to the spawn point with one command, which is configurable a lot of features are usable.
+A fully configurable plugin that allows the player to teleport to the spawn point with one command.
 
 ## Link
 * [Spigot](https://www.spigotmc.org/resources/48992/)
@@ -13,8 +13,6 @@ A fully configurable plugin that allows the player to teleport to the spawn poin
 * [MCMarket](https://www.mc-market.org/resources/5799/)
 
 ### Other
-If you find a bug, please write here: https://github.com/montlikadani/SetTheSpawn/issues
+If you find a bug, please post issue here: https://github.com/montlikadani/SetTheSpawn/issues
 
 Wiki: https://github.com/montlikadani/SetTheSpawn/wiki
-
-Changelog: https://github.com/montlikadani/SetTheSpawn/blob/master/Changelog.txt

@@ -4,6 +4,7 @@ remember-toggled-spawns-to-file: true
 
 # How many seconds have to wait for a player to be teleported?
 # If 0, will instantly teleports.
+# This will be ignored with "setthespawn.bypass.cooldown" permission for specific players
 teleport-delay: 0
 
 # This allows to send the messages repeatedly when the player starts
@@ -33,7 +34,7 @@ progress-bar:
   message-format: "&aTeleporting in:&7&l [%output%&7&l]&6 (&8%time%&6)"
 
 # If the spawn can not be found, teleport it to the world spawn?
-teleport-to-world-spawn-if-spawn-not-found: true
+teleport-to-world-spawn-if-spawn-not-found: false
 
 # Teleport the player to the default set world spawn?
 # If this true, ignores the spawn locations, join spawn that has been set and teleports
@@ -125,6 +126,11 @@ spawn-cost:
 
 # Cancel teleport if:
 cancel-teleport:
+  # How many seconds does the player have to wait to use the spawn command
+  # again when the player moved during teleport time? (bypass permission: setthespawn.bypass.spawndelay)
+  # Move includes damage, jump and any type of move.
+  spawn-command-delay-after-move: 0
+
   # Player was moved while teleporting.
   move:
     enable: true
@@ -307,6 +313,16 @@ void-on-spawn:
   # If it is false, it hurts.
   fall-distance: true
 
+  # The list of disabled worlds where player shouldn't teleport to the set of spawn.
+  disabled-worlds:
+    # If enabled, the world names should target the set of spawn world.
+    # For example, if you have set spawn in world1, and disabled world_nether,
+    # players are not teleports to world1 spawn if falls into void.
+    use-target-spawn-worlds: false
+
+    list:
+    #- end
+
   # When a player void, plays an effect?
   teleport-effect:
     # All effects:
@@ -319,6 +335,7 @@ void-on-spawn:
 # Teleport on command when the player teleported to spawn.
 teleport-on-command:
   # Use player & console arguments for first.
+  # You can use %player% & %world% placeholders.
   commands:
   #- "player: money"
   #- "player: kit"
@@ -449,4 +466,4 @@ download-updates: true
 logconsole: true
 
 # DO NOT CHANGE THIS!
-config-version: 11
+config-version: 12
