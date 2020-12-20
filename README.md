@@ -12,6 +12,40 @@ A fully configurable plugin that allows the player to teleport to the spawn poin
 * [Bukkit](https://dev.bukkit.org/projects/setthespawn)
 * [MCMarket](https://www.mc-market.org/resources/5799/)
 
+# SetTheSpawn API
+You can manually add the jar file to your build path or you can use jitpack if you use maven or gradle:
+## Maven:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.montlikadani</groupId>
+        <artifactId>SetTheSpawn</artifactId>
+        <version>LATEST</version> <!-- Change the LATEST to the current version of plugin -->
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+## Gradle:
+```gradle
+repositories {
+    maven { 
+        url 'https://jitpack.io' 
+    }
+}
+dependencies {
+    implementation 'com.github.montlikadani:SetTheSpawn:LATEST' //Change the LATEST to the current version of plugin
+}
+```
+
+For API events: https://github.com/montlikadani/SetTheSpawn/wiki/API
+
 ### Other
 If you find a bug, please post issue here: https://github.com/montlikadani/SetTheSpawn/issues
 
