@@ -1,0 +1,133 @@
+name: SetTheSpawn
+main: hu.montlikadani.setthespawn.SetTheSpawn
+version: 2.6.7
+author: montlikadani
+description: Set the spawn at the location.
+softdepend: [Vault, Essentials]
+api-version: 1.13
+# DO NOT EDIT ANYTHING ABOVE THIS LINE!
+
+commands:
+  setthespawn:
+    description: The main command for SetTheSpawn.
+    usage: <command>
+    aliases: [sts]
+  setspawn:
+    description: Set the spawn command.
+    usage: <command>
+  deletespawn:
+    description: Delete the spawn command.
+    usage: <command>
+    aliases: [delspawn]
+  spawn:
+    description: Teleport to the spawn.
+    usage: <command>
+
+permissions:
+  setthespawn.*:
+     description: Gives access to all SetTheSpawn permissions.
+     children:
+       setthespawn.spawn.use: true
+       setthespawn.setspawn: true
+       setthespawn.delspawn: true
+       setthespawn.bypass.cooldown: true
+       setthespawn.spawn.teleport.all: true
+       setthespawn.spawn.teleport.other: true
+       setthespawn.spawn.setup: true
+       setthespawn.sign.create: true
+       setthespawn.sign.break: true
+       setthespawn.sign.use: true
+       setthespawn.countdown.stopall: true
+       setthespawn.sign.use.everybody: true
+       setthespawn.bypass.blockspawninpvp: true
+       setthespawn.bukkitspawn: true
+       setthespawn.bukkitspawn.other: true
+       setthespawn.joinspawn: true
+       setthespawn.importessspawn: true
+       setthespawn.togglespawn: true
+       setthespawn.togglespawn.bypass: true
+       setthespawn.togglespawn.all: true
+       setthespawn.bypass.fly: true
+       setthespawn.bypass.fire: true
+       setthespawn.bypass.sneak: true
+       setthespawn.bypass.minecart: true
+       setthespawn.reload: true
+       setthespawn.help: true
+  setthespawn.spawn.use:
+    description: Allows a player to use /spawn command.
+    default: true
+  setthespawn.setspawn:
+    description: Allows a player to use /setspawn command.
+    default: false
+  setthespawn.delspawn:
+    description: Allows a player to use /deletespawn command.
+    default: false
+  setthespawn.bypass.cooldown:
+    description: Bypass teleport cooldown permission.
+    default: false
+  setthespawn.spawn.teleport.all:
+    description: Teleport all players to spawn permission.
+    default: false
+  setthespawn.spawn.teleport.other:
+    description: Teleport other player to spawn permission.
+    default: false
+  setthespawn.spawn.setup:
+    description: Allows a player to use spawn settings gui.
+    default: false
+  setthespawn.sign.create:
+    description: Allows a player to create a spawn sign.
+    default: false
+  setthespawn.sign.break:
+    description: Allows a player to break a spawn sign.
+    default: false
+  setthespawn.sign.use:
+    description: Allows a player to use a spawn sign.
+    default: true
+  setthespawn.countdown.stopall:
+    description: Allows a player to use /sts stopalltask command.
+    default: false
+  setthespawn.sign.use.everybody:
+    description: Allows a player to use in sign everybody line to teleport all online players.
+    default: false
+  setthespawn.bypass.blockspawninpvp:
+    description: Bypass block spawn command in pvp.
+    default: false
+  setthespawn.bukkitspawn:
+    description: Allows to the player to use /sts bukkitspawn command.
+    default: false
+  setthespawn.bukkitspawn.other:
+    description: Allows to the player to use /sts bukkitspawn <player> command.
+    default: false
+  setthespawn.joinspawn:
+    description: Allows to the player to use /sts joinspawn command.
+    default: false
+  setthespawn.importessspawn:
+    description: Allows to the player to use /sts importessspawn [group] command.
+    default: false
+  setthespawn.togglespawn:
+    description: Allows to the player to use /sts togglespawn command.
+    default: false
+  setthespawn.togglespawn.bypass:
+    description: Bypass the togglespawn when the spawn has locked with command.
+    default: false
+  setthespawn.togglespawn.all:
+    description: Allows to the player to use /sts togglespawn all command.
+    default: false
+  setthespawn.bypass.fly:
+    description: Bypass the flight when a player want teleport to spawn when flying.
+    default: false
+  setthespawn.bypass.fire:
+    description: Prevent spawn when player is in fire.
+    default: false
+  setthespawn.bypass.sneak:
+    description: Bypass the sneak mode when a player want teleport to spawn when sneak.
+    default: false
+  setthespawn.bypass.minecart:
+    description: Allows us to spawn while player is in minecart.
+    default: false
+  setthespawn.help:
+    description: Help commands for SetTheSpawn.
+    default: false
+  setthespawn.reload:
+    description: Reload the config files.
+    default: false
