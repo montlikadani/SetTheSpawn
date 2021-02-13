@@ -1,11 +1,7 @@
 # SetTheSpawn [![GitHub release](https://img.shields.io/github/release/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![Github All Releases](https://img.shields.io/github/downloads/montlikadani/SetTheSpawn/total.svg)](https://github.com/montlikadani/SetTheSpawn/releases) [![GitHub issues](https://img.shields.io/github/issues/montlikadani/SetTheSpawn.svg)](https://github.com/montlikadani/SetTheSpawn/issues)
 
-[![bStats](https://img.shields.io/badge/bStats-1.7-brightgreen)](https://bstats.org/plugin/bukkit/SetTheSpawn)
-
-Set spawn at the location.
+This resource adds ability to set spawn at the given location with much more features.
 ***
-
-A fully configurable plugin that allows the player to teleport to the spawn point with one command.
 
 ## Link
 * [Spigot](https://www.spigotmc.org/resources/48992/)
@@ -14,7 +10,7 @@ A fully configurable plugin that allows the player to teleport to the spawn poin
 
 # SetTheSpawn API
 You can manually add the jar file to your build path or you can use jitpack if you use maven or gradle:
-## Maven:
+## Maven
 ```xml
 <repositories>
     <repository>
@@ -32,7 +28,7 @@ You can manually add the jar file to your build path or you can use jitpack if y
     </dependency>
 </dependencies>
 ```
-## Gradle:
+## Gradle
 ```gradle
 repositories {
     maven { 
@@ -44,7 +40,7 @@ dependencies {
 }
 ```
 
-For API events: https://github.com/montlikadani/SetTheSpawn/wiki/API
+For API events and available methods: https://github.com/montlikadani/SetTheSpawn/wiki/API
 
 ### Other
 If you find a bug, please post issue here: https://github.com/montlikadani/SetTheSpawn/issues
