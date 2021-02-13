@@ -68,7 +68,7 @@ per-world-spawn: false
 disabled-worlds:
 #- world_the_end
 
-# Prevent spawn command executing when a player in pvp.
+# Prevent spawn command executing when a player in combat.
 disable-spawn-in-pvp:
   enable: false
 
@@ -101,7 +101,7 @@ prevent-spawn-when-player-is-in-fire: false
 # This ignores with setthespawn.bypass.sneak permission.
 check-sneak-while-teleport:
   enable: false
-  message: "&cTeleporting is canceled because snake mode is enabled."
+  message: "&cTeleporting is cancelled because snake mode is enabled."
 
 # Cost for /spawn command executing or sign interacting.
 # For this, requires Vault plugin.
@@ -143,10 +143,8 @@ cancel-teleport:
 
     # Play sound when a player moved while teleporting.
     play-sound:
-      enable: false
-
       # Usage: SOUND_TYPE, volume, pitch
-      type: BLOCK_ENDER_CHEST_CLOSE, 8, 1
+      #type: BLOCK_ENDER_CHEST_CLOSE, 8, 1
 
     # If the player moved during teleporting, would the player pay for it or not?
     pay-if-moved:
@@ -168,10 +166,8 @@ cancel-teleport:
 
     # Play sound when a player jump while teleporting.
     play-sound:
-      enable: false
-
       # Usage: SOUND_TYPE, volume, pitch
-      type: BLOCK_WOODEN_DOOR_CLOSE
+      #type: BLOCK_WOODEN_DOOR_CLOSE
 
     # If the player jumped during teleporting, would the player pay for it or not?
     pay-if-jumped:
@@ -193,10 +189,8 @@ cancel-teleport:
 
     # Play sound when a player attacked someone while teleporting.
     play-sound:
-      enable: false
-
       # Usage: SOUND_TYPE, volume, pitch
-      type: BLOCK_LEVER_CLICK, 8, 1
+      #type: BLOCK_LEVER_CLICK, 8, 1
 
     # If the player get damage during teleporting, would the player pay for it or not?
     pay-if-damage:
@@ -208,14 +202,12 @@ cancel-teleport:
 
 # When a player is being teleported, will plays an effect?
 teleport-effect:
-  # All effects:
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
   # Usage: EFFECT_TYPE, duration
   #effect: ENDER_SIGNAL, 10
 
 # Player sound when player teleported.
 teleport-sound:
-  # All sounds:
   # 1.8.x: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
   # 1.9+: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
   # Usage: SOUND_TYPE, volume, pitch
@@ -236,7 +228,7 @@ launch-firework:
   flicker: true
   trail: true
 
-  # All firework types: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/FireworkEffect.Type.html
+  # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/FireworkEffect.Type.html
   type: STAR
 
   # Colors 0 - 255
@@ -256,10 +248,8 @@ launch-firework:
 title:
   # When you have started teleporting, a title will also be displayed.
   start-spawn:
-    enable: false
-
-    title: "&aTeleporting in"
-    subtitle: "&6%seconds%&a seconds"
+    #title: "&aTeleporting in"
+    #subtitle: "&6%seconds%&a seconds"
 
     # The title times to be displayed, stay and removing from the screen. (In ticks)
     # Usage: fadeIn, stay, fadeOut
@@ -267,37 +257,29 @@ title:
 
   # When the player has teleported to the spawn and displays the title.
   end-spawn:
-    enable: false
-
-    title: "&3Teleport"
-    subtitle: "&asuccess!"
+    #title: "&3Teleport"
+    #subtitle: "&asuccess!"
 
     times: 10, 30, 60
 
   # When a player moves while teleporting.
   player-moved:
-    enable: false
-
-    title: "&cYou moved!"
-    subtitle: "&eTeleport cancelled."
+    #title: "&cYou moved!"
+    #subtitle: "&eTeleport cancelled."
 
     times: 10, 30, 50
 
-  # When a player jump while teleporting.
-  player-jump:
-    enable: false
-
-    title: "&cYou jumped!"
-    subtitle: "&eTeleport cancelled."
+  # When a player jumps while teleporting.
+  player-jumped:
+    #title: "&cYou jumped!"
+    #subtitle: "&eTeleport cancelled."
 
     times: 10, 30, 50
 
   # When player are attacked somebody while teleporting.
   player-damage:
-    enable: false
-
-    title: "&cA player was attacked!"
-    subtitle: "&eTeleport cancelled."
+    #title: "&cA player was attacked!"
+    #subtitle: "&eTeleport cancelled."
 
     times: 10, 30, 50
 
@@ -319,13 +301,11 @@ void-on-spawn:
     # For example, if you have set spawn in world1, and disabled world_nether,
     # players are not teleports to world1 spawn if falls into void.
     use-target-spawn-worlds: false
-
     list:
     #- end
 
-  # When a player void, plays an effect?
+  # When a player void, plays an effect
   teleport-effect:
-    # All effects:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
     #effect: ENDER_SIGNAL, 15
 
@@ -423,11 +403,8 @@ gui-rows: 1
 # What should the name of the GUI be?
 gui-name: "&5Spawn settings"
 
-# Close the GUI when a player clicks on an item and executed successfully?
-close-gui-when-player-clicked-on-a-item: true
-
-# All GUI items are here.
-# How to add new item in GUI?: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
+# All GUI items are set here.
+# Documentation on how to add item: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
 # Slot starts at 0 and end at 53 for a size 54 inventory.
 items:
   slot-2:
@@ -455,13 +432,10 @@ items:
     - "&7------------"
     command: delspawn
 
-#=========================================#
-#             Plugin Settings             #
-#=========================================#
-# Check for updates.
+# Check for updates
 check-update: true
 
-# Download releases to \releases folder
+# Download releases to "releases" folder
 # This only works if the "check-update" is true.
 download-updates: true
 

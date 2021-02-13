@@ -1,10 +1,11 @@
 package hu.montlikadani.setthespawn.API.events;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 
@@ -13,35 +14,30 @@ import org.bukkit.event.Cancellable;
  */
 public class PreSpawnSetEvent extends BaseEvent implements Cancellable {
 
-	private Location location;
 	private double cost;
-	private List<String> groups;
 	private boolean perWorld;
+
+	private Location location;
 	private Player player;
+	private World targetWorld;
+
+	private final List<String> groups = new ArrayList<>();
 
 	private boolean cancelled = false;
-
-	public PreSpawnSetEvent() {
-		this(null);
-	}
 
 	public PreSpawnSetEvent(Location location) {
 		this(location, 0D);
 	}
 
 	public PreSpawnSetEvent(Location location, double cost) {
-		this(location, cost, Collections.emptyList());
+		this(location, cost, false);
 	}
 
-	public PreSpawnSetEvent(Location location, double cost, List<String> groups) {
-		this(location, cost, groups, false);
-	}
-
-	public PreSpawnSetEvent(Location location, double cost, List<String> groups, boolean perWorld) {
+	public PreSpawnSetEvent(Location location, double cost, boolean perWorld) {
 		this.location = location;
-		setCost(cost);
-		this.groups = groups;
 		this.perWorld = perWorld;
+
+		setCost(cost);
 	}
 
 	/**
@@ -105,19 +101,9 @@ public class PreSpawnSetEvent extends BaseEvent implements Cancellable {
 	 * @return the new cost
 	 */
 	public void setCost(double cost) {
-		Validate.isTrue(cost >= 0, "Cost should be greater or equals than zero (>= 0)");
+		Validate.isTrue(cost >= 0, "Cost should be greater than -1 (>= 0)");
 
 		this.cost = cost;
-	}
-
-	/**
-	 * Sets the new list of groups for spawn.
-	 * 
-	 * @param groups list of group names
-	 * @return the new list
-	 */
-	public void setGroups(List<String> groups) {
-		this.groups = groups == null ? Collections.emptyList() : groups;
 	}
 
 	/**
@@ -136,6 +122,26 @@ public class PreSpawnSetEvent extends BaseEvent implements Cancellable {
 	 */
 	public void setPerWorld(boolean perWorld) {
 		this.perWorld = perWorld;
+	}
+
+	/**
+	 * Returns the target world where to teleport the player.
+	 * <p>
+	 * Set to <code>null</code> to use the {@link #getLocation()} world.
+	 * 
+	 * @return the target world
+	 */
+	public World getTargetWorld() {
+		return targetWorld;
+	}
+
+	/**
+	 * Sets the target world where to teleport the player.
+	 * 
+	 * @param targetWorld {@link World}
+	 */
+	public void setTargetWorld(World targetWorld) {
+		this.targetWorld = targetWorld;
 	}
 
 	@Override
