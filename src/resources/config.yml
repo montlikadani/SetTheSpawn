@@ -3,7 +3,7 @@
 remember-toggled-spawns-to-file: true
 
 # How many seconds have to wait for a player to be teleported?
-# If 0, will instantly teleports.
+# Leave at 0 if you want to teleport immediately.
 # This will be ignored with "setthespawn.bypass.cooldown" permission for specific players
 teleport-delay: 0
 
@@ -324,16 +324,19 @@ teleport-on-command:
 
 # Teleport to spawn if:
 spawn-teleport:
-  # the player joins the server?
+  # the player joins the server
   player-join: false
 
-  # the player first joins the server?
+  # the player first joins the server
   player-first-join: false
 
   # the player is died?
   respawn: false
 
-  # (1.16+) the player should respawn at anchor?
+  # the player should respawn at their bed spawn if exist.
+  respawn-at-bed: false
+
+  # (1.16+) the player should respawn at anchor
   respawn-at-anchor: true
 
 # Spawn sign settings
