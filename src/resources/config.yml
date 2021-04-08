@@ -208,8 +208,7 @@ teleport-effect:
 
 # Player sound when player teleported.
 teleport-sound:
-  # 1.8.x: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
-  # 1.9+: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
   # Usage: SOUND_TYPE, volume, pitch
   #sound: ENDERMAN_TELEPORT, 10, 1
 

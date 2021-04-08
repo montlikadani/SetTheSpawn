@@ -43,6 +43,6 @@ dependencies {
 For API events and available methods: https://github.com/montlikadani/SetTheSpawn/wiki/API
 
 ### Other
-If you find a bug, please post issue here: https://github.com/montlikadani/SetTheSpawn/issues
+If you find a bug or you want to request a feature, please post an issue here: https://github.com/montlikadani/SetTheSpawn/issues
 
-Wiki: https://github.com/montlikadani/SetTheSpawn/wiki
+Documentation about the plugin: https://github.com/montlikadani/SetTheSpawn/wiki
