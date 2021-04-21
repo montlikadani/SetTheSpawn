@@ -29,6 +29,7 @@ not-enough-money: "&cYou do not have enough money to execute this command.&e Cos
 not-enough-money-sign: "&cYou do not have enough money to use this sign.&e Cost:&a $%cost%"
 teleport-all-players: "&2Everyone was teleported to the spawn by:&c %sender%."
 other-player-teleported: "&e%sender%&a teleported you to spawn."
+no-bed-spawn: "&cYou don't have bed spawn set!"
 gui-open-message: ""
 not-number: "&cCost values requires double numbers."
 spawn-command-delay: "&cWait&e %time%&c to execute this command again."
