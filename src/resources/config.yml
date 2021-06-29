@@ -1,5 +1,4 @@
-# Save the toggled spawns to a file to load after server restart.
-# If this false, if the file is exists, it will be deleted automatically at server restart.
+# Save the switched spawn usage data to a file to load for specific players after server restart.
 remember-toggled-spawns-to-file: true
 
 # How many seconds have to wait for a player to be teleported?
@@ -8,50 +7,48 @@ remember-toggled-spawns-to-file: true
 teleport-delay: 0
 
 # This allows to send the messages repeatedly when the player starts
-# teleporting, or if it is false, sends the message once only.
+# teleporting, otherwise it will sends the message once only.
 teleport-message-repeater: false
 
-# Teleport progress bar while the player started teleport.
+# Displaying progress bar after the player started to teleport.
 progress-bar:
   enable: false
 
-  # Progress bar size
   bar-size: 30.0
 
-  # Bar update fast in ticks.
+  # Update frequency
   fast: 2
 
-  # Teleport progress display mark.
+  # Teleport progress display mark
   mark: "\u258B"
 
-  # When the teleport is ready.
+  # Color to display the progress of teleporting
   done-color: "&a&l"
 
-  # When teleport is not ready yet.
+  # Color to display the progress of the waiting time
   not-done-color: "&c&l"
 
-  # Use %output%, %time% placeholder.
   message-format: "&aTeleporting in:&7&l [%output%&7&l]&6 (&8%time%&6)"
 
-# If the spawn can not be found, teleport it to the world spawn?
+# If players execute spawn command they will be teleported
+# to world spawn in case if spawn is not set.
 teleport-to-world-spawn-if-spawn-not-found: false
 
 # Teleport the player to the default set world spawn?
-# If this true, ignores the spawn locations, join spawn that has been set and teleports
-# to the world spawn location.
-#teleport-to-world-spawn: false
+# If this true, it will ignores the spawn location,
+# join spawn and teleports to the world spawn location.
+teleport-to-world-spawn: false
 
-# Teleport to the set player bed spawn. If the player bed spawn not found,
-# will teleporting to the spawn.
-# This option works with anchor spawn if exist.
-#teleport-to-bed-spawn: false
+# Teleport to the player's bed location, if exist.
+# This option also works with anchor spawn if exist.
+teleport-to-bed-spawn: false
 
 # Do include operator players in teleporting to teleport them?
-# This happens when a player teleports everyone.
+# This is only valid when someone wants to teleport each player.
 teleport-op-players: false
 
 # A player teleported to the spawn, how many seconds to protect the player from damage?
-# Set 0 to disable.
+# Leave it at 0 to disable
 no-damage-time: 0
 
 # Teleports automatically to spawn, when a player afk status is true.
@@ -59,8 +56,8 @@ no-damage-time: 0
 auto-teleport-to-spawn-when-player-afk: false
 
 # Use separate worlds?
-# If enabled, will changes the spawn behavior when the players teleporting.
-# So if this true then the players will be teleported to the spawn where the player is in that world.
+# If enabled, the behaviour of the spawn will also change.
+# All worlds spawn must be set, if no players will not be teleported.
 # This will changes the spawn settings in the spawns file.
 per-world-spawn: false
 
@@ -72,10 +69,10 @@ disabled-worlds:
 disable-spawn-in-pvp:
   enable: false
 
-  # Command re-allow time in seconds.
+  # Waiting time to use the spawn again.
   time: 5
 
-  # Message when you attack a player or attack you.
+  # Message when you attack a player or attack yourself.
   message: "&cNow you can not teleport to spawn because you're still fighting with a player."
 
 # Check if the player is in flying mode?
@@ -106,72 +103,67 @@ check-sneak-while-teleport:
 # Cost for /spawn command executing or sign interacting.
 # For this, requires Vault plugin.
 spawn-cost:
-  # If this is given at the group, they can use the /spawn command without payment.
-  # If not given, the /spawn command must be paid.
+  # Bypass permission to allow teleporting without payment.
   # This will be ignored if this empty.
   permission: setthespawn.bypass.spawncost
 
-  # This can be set as per-spawn when setting the spawn point.
+  # The amount of cost to be paid.
   cost: 0.0
 
-  # Sign usage price (Same as /spawn command)
+  # Sign interaction price
   sign:
-    # If this is given at the group, they can use the spawn sign without payment.
-    # If not given, the spawn sign usage must be paid.
+    # Bypass permission to allow teleporting via sign without payment.
     # This will be ignored if this empty.
     permission: setthespawn.bypass.signcost
 
-    # Cost of sign usage
+    # The amount of cost to be paid.
     cost: 0.0
 
-# Cancel teleport if:
 cancel-teleport:
   # How many seconds does the player have to wait to use the spawn command
   # again when the player moved during teleport time? (bypass permission: setthespawn.bypass.spawndelay)
-  # Move includes damage, jump and any type of move.
+  # Move includes damage, jump and any type of movement.
   spawn-command-delay-after-move: 0
 
   # Player was moved while teleporting.
   move:
     enable: true
 
-    # Message when the player moved.
     teleport-canceled: "&cTeleport cancelled, you can't move!"
 
-    # While a player teleporting, the task will not cancel if this given and player moved.
+    # Bypass permission to allow movement while teleporting.
     permission: setthespawn.bypass.movement
 
     # Play sound when a player moved while teleporting.
     play-sound:
-      # Usage: SOUND_TYPE, volume, pitch
+      # SOUND_TYPE, volume, pitch
       #type: BLOCK_ENDER_CHEST_CLOSE, 8, 1
 
-    # If the player moved during teleporting, would the player pay for it or not?
+    # The player should pay for movement while teleporting.
     pay-if-moved:
-      # Cost for moved during teleport
+      # The amount of cost to be paid.
       cost: 0.0
 
-      # The permission to bypass move pay
+      # The permission to bypass movement payment.
       permission: setthespawn.bypass.spawn.movedcost
 
   # Player was jump while teleporting.
   jump:
     enable: true
 
-    # Message when the player jumped.
     teleport-canceled: "&cTeleport cancelled, you can't jump!"
 
-    # While player teleporting, the task will not cancel if this given and player jumped.
+    # Bypass permission to allow jump while teleporting.
     permission: setthespawn.bypass.jump
 
     # Play sound when a player jump while teleporting.
     play-sound:
-      # Usage: SOUND_TYPE, volume, pitch
+      # SOUND_TYPE, volume, pitch
       #type: BLOCK_WOODEN_DOOR_CLOSE
 
-    # If the player jumped during teleporting, would the player pay for it or not?
+    # The player should pay for jump payment.
     pay-if-jumped:
-      # Cost for jumped during teleport
+      # The amount of cost to be paid.
       cost: 0.0
 
       # The permission to bypass jump while teleporting.
@@ -181,38 +173,37 @@ cancel-teleport:
   damage:
     enable: true
 
-    # Message when the other player attacked.
     teleport-canceled: "&cTeleport cancelled, you are in combat!"
 
-    # While player teleporting, the task will not cancel if this given and player got damage.
+    # Bypass permission to allow player damaging while teleporting.
     permission: setthespawn.bypass.damage
 
     # Play sound when a player attacked someone while teleporting.
     play-sound:
-      # Usage: SOUND_TYPE, volume, pitch
+      # SOUND_TYPE, volume, pitch
       #type: BLOCK_LEVER_CLICK, 8, 1
 
-    # If the player get damage during teleporting, would the player pay for it or not?
+    # Should the player pay for damage while teleporting?
     pay-if-damage:
-      # Cost for get damage during teleport
+      # The amount of cost to be paid.
       cost: 0.0
 
-      # The permission to bypass cancel teleport for getting damage.
+      # The permission to bypass damage payment.
       permission: setthespawn.bypass.spawn.damagecost
 
-# When a player is being teleported, will plays an effect?
+# Play effect after the player is teleported?
 teleport-effect:
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
-  # Usage: EFFECT_TYPE, duration
+  # EFFECT_TYPE, duration
   #effect: ENDER_SIGNAL, 10
 
-# Player sound when player teleported.
+# Play sound after the player is teleported?
 teleport-sound:
   # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
-  # Usage: SOUND_TYPE, volume, pitch
+  # SOUND_TYPE, volume, pitch
   #sound: ENDERMAN_TELEPORT, 10, 1
 
-# Launch firework when the player teleported to the spawn.
+# Launch firework when the player teleported
 launch-firework:
   enable: false
 
@@ -222,7 +213,6 @@ launch-firework:
   # If you have issues with this, then disable it.
   fix-entity-damage-after-teleportation: true
 
-  # If true, the features below do not apply to it.
   random: true
   flicker: true
   trail: true
@@ -243,7 +233,6 @@ launch-firework:
   # The power to launch the firework.
   power: 1
 
-# Send title if:
 title:
   # When you have started teleporting, a title will also be displayed.
   start-spawn:
@@ -251,7 +240,7 @@ title:
     #subtitle: "&6%seconds%&a seconds"
 
     # The title times to be displayed, stay and removing from the screen. (In ticks)
-    # Usage: fadeIn, stay, fadeOut
+    # fadeIn, stay, fadeOut
     times: 10, 30, 60
 
   # When the player has teleported to the spawn and displays the title.
@@ -282,7 +271,7 @@ title:
 
     times: 10, 30, 50
 
-# If the player is in the void, will it teleports to the spawn?
+# When the player reached the given amount of void height will it teleport to the spawn?
 void-on-spawn:
   enable: false
 
@@ -290,8 +279,8 @@ void-on-spawn:
   # Example: 5 - so Y:5
   height: 0
 
-  # If it is true, it does not hurt.
-  # If it is false, it hurts.
+  # true - player will be protected from fall distance hurt.
+  # false - player will not be protected from fall distance hurt.
   fall-distance: true
 
   # The list of disabled worlds where player shouldn't teleport to the set of spawn.
@@ -303,15 +292,15 @@ void-on-spawn:
     list:
     #- end
 
-  # When a player void, plays an effect
+  # Play effect after player teleported from void?
   teleport-effect:
     # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
     #effect: ENDER_SIGNAL, 15
 
-  # Message when the player has void fall and teleported to spawn.
+  # Message when the player teleported from void.
   message: ""
 
-# Teleport on command when the player teleported to spawn.
+# Perform commands after player teleport
 teleport-on-command:
   # Use player & console arguments for first.
   # You can use %player% & %world% placeholders.
@@ -321,38 +310,33 @@ teleport-on-command:
   #- "console: eco take %player% 50"
   #- "console: money"
 
-# Teleport to spawn if:
 spawn-teleport:
-  # the player joins the server
   player-join: false
-
-  # the player first joins the server
   player-first-join: false
 
-  # the player is died?
+  # Teleport the player if died?
   respawn: false
 
-  # the player should respawn at their bed spawn if exist.
+  # Respawn player at their bed spawn if exist?
   respawn-at-bed: false
 
-  # (1.16+) the player should respawn at anchor
+  # (1.16+) Respawn player at anchor?
   respawn-at-anchor: true
 
-# Spawn sign settings
 spawn-sign:
-  # Allows you to create and use the spawn sign.
+  # Allows you to create and use spawn sign
   enable: true
 
-  # Save signs automatically to a file when you place a sign?
+  # Save signs data automatically to a file when a sign was placed?
   save-sign-data: false
 
   # If the player does not have permission to create a sign.
   no-permission-create-sign:
-    # If it is true, it will break the sign.
-    # If it is false, it does not break the sign.
+    # true - the sign that was placed will break
+    # false - the sign will not break
     break-sign: false
 
-    # If the above option "break-sign" is disabled, will using this.
+    # If the above option "break-sign" is disabled, some text will set in sign
     setline:
       lines:
       - "&cYou do not have"
@@ -360,14 +344,14 @@ spawn-sign:
       - "&cto create"
       - "&ca sign!"
 
-  # If the spawn is not set up and what to write.
+  # If the spawn is not set what to display in sign
   no-spawn:
   - "&c[Spawn]"
   - "%text%"
   - "%text%"
   - "%text%"
 
-  # If the spawn is set and what to write.
+  # If the spawn is exist, what to display in sign
   spawn-created:
     lines:
     - "&9[Spawn]"
@@ -381,7 +365,6 @@ spawn-sign:
     - "%text%"
     - "%text%"
 
-    # If the world spawn is set and what to write.
     per-world:
       lines:
       - "&9[Spawn]"
@@ -396,7 +379,7 @@ spawn-sign:
       - "%text%"
 
 # Enable the gui setup?
-enable-gui: false
+enable-gui: true
 
 # How many rows should the GUI have?
 # This multiplies the specified number by 9, thus creating the GUI correctly.
@@ -405,8 +388,7 @@ gui-rows: 1
 # What should the name of the GUI be?
 gui-name: "&5Spawn settings"
 
-# All GUI items are set here.
-# Documentation on how to add item: https://github.com/montlikadani/SetTheSpawn/wiki/How-to-add-new-item-to-GUI%3F%E2%80%8B
+# All setup GUI items are set here
 # Slot starts at 0 and end at 53 for a size 54 inventory.
 items:
   slot-2:

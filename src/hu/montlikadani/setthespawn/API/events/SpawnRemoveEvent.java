@@ -1,6 +1,6 @@
 package hu.montlikadani.setthespawn.API.events;
 
-import hu.montlikadani.setthespawn.SpawnData;
+import hu.montlikadani.setthespawn.spawn.SpawnData;
 
 /**
  * Called when a spawn has been removed by a player.

@@ -48,7 +48,6 @@ toggle-spawn:
   spawn-use-toggled-off: "&cThe spawn successfully locked."
   spawn-use-toggled-on: "&aThe spawn successfully unlocked."
   spawn-locked: "&cThe spawn is currently locked, so you can not use. Please try it later."
-  no-player: "&cThere is no player available on the server."
 bukkit-spawn-teleport:
   teleported: "&aYou have been successfully teleported to bukkit spawn."
   target-teleported: "&aYou have successfully teleported&e %player%&a to spawn."

@@ -1,6 +1,6 @@
 package hu.montlikadani.setthespawn.API.events;
 
-import hu.montlikadani.setthespawn.SpawnData;
+import hu.montlikadani.setthespawn.spawn.SpawnData;
 
 /**
  * Fired when a spawn set by a player.
